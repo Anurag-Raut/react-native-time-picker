@@ -1,12 +1,11 @@
-import { Text, View, StyleSheet } from 'react-native';
-import { multiply } from 'react-native-time-picker';
+import { View, StyleSheet } from 'react-native';
+import TimePicker  from 'react-native-time-picker';
 
-const result = multiply(3, 7);
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>Result: {result}</Text>
+     <TimePicker/>
     </View>
   );
 }
