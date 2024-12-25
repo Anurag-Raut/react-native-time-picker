@@ -3,122 +3,116 @@ import { StyleSheet, Text, View } from "react-native";
 
 type Center = {
   x: number;
-  y: number
-}
+  y: number;
+};
+
+type Position = {
+  x: number;
+  y: number;
+};
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: "gray",
     height: 200,
     width: 200,
     justifyContent: "center",
     alignItems: "center",
-    borderRadius: 100,
+    borderRadius: 10000,
+    backgroundColor: "gray",
     position: "relative",
   },
   number: {
     position: "absolute",
     fontSize: 20,
     fontWeight: 'bold',
+    height:30,
+    width:30,
+    textAlign:"center",
+    textAlignVertical:"center"
   },
   indicatorLine: {
     position: "absolute",
     width: 2,
-    backgroundColor: "black",
+    backgroundColor: "lightgray",
     transformOrigin: "bottom",
   },
+  selectedNumber:{
+    backgroundColor:"lightgray",
+    borderRadius:100,
+    height: 30, 
+    width: 30,  
+    position: "absolute",
+    justifyContent:"center",
+    alignContent:"center"
+
+
+
+  }
 });
 
-function TimeComponent({ rotationDegree, center }: {
-  rotationDegree: number;
-  center: Center
-}) {
-
-  
+function TimeComponent({ rotationDegree, center,radius }: { rotationDegree: number; center: Center,radius:number }) {
   return (
-
-
     <View
       style={{
         ...styles.indicatorLine,
-        height: 70,
+        height: radius-(30+15),
         transform: [{ rotate: `${rotationDegree}deg` }],
-        top: center.y - 70,
+        top: center.y -(radius-(30+15)),
       }}
     />
-
   );
 }
 
-export default function TimePicker() {
-  const [layout, setLayout] = useState(null); // To store container layout
+export default function TimePicker({radius}:{radius:number}) {
+  const [layout, setLayout] = useState<{ width: number; height: number; positions: Position[] } | null>(null);
   const hours = Array.from({ length: 12 }, (_, index) => index + 1);
-  const [hour, setHour] = useState(0);
+  const [hour, setHour] = useState<number>(0);
+  const [center, setCenter] = useState<Center>({ x: 0, y: 0 });
 
-
-  const [center,setCenter]=useState<Center>({
-    x:0,
-    y:0
-  })
-  const handleLayout = (event) => {
+  const handleLayout = (event: any) => {
     const { width, height } = event.nativeEvent.layout;
     const centerX = width / 2;
     const centerY = height / 2;
-    const radius = 70; 
-    const [position,setPosition] =useState<Array<{x:number,y:number}>>([]);
-    setCenter({
-      x:centerX,
-      y:centerY
-    })
+    const numbersRadius=radius-30;
+    const updatedPositions: Position[] = [];
+
+    setCenter({ x: centerX, y: centerY });
 
     for (let i = 0; i < hours.length; i++) {
-      const angle = ((i * Math.PI / (hours.length/2)) - Math.PI / 2);
-      const x = centerX + radius * Math.cos(angle);
-      const y = centerY + radius * Math.sin(angle);
+      const angle = ((i * Math.PI / (hours.length / 2)) - (Math.PI / 2)) ;
+      const x = centerX + numbersRadius * Math.cos(angle);
+      const y = centerY + numbersRadius * Math.sin(angle);
       updatedPositions.push({ x, y });
     }
 
+    setLayout({ width, height, positions: updatedPositions });
   };
-  const getIndicatorRotation = (index) => {
-    return ((index / 12) * 360) - 90;
+
+  const getIndicatorRotation = (index: number) => {
+    return ((index / 12) * 360 );
   };
 
   return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      {/* <TimeComponent hour={hour} /> */}
-      <View style={styles.container} onLayout={handleLayout}>
+      <View style={[styles.container,{height:radius*2,width:radius*2}]} onLayout={handleLayout}>
         {layout?.positions?.map((position, index) => (
           <React.Fragment key={index}>
             <Text
-              style={{
+              onPress={() => setHour(index )}
+              style={[{
                 ...styles.number,
-                left: position.x - 10,
-                top: position.y - 10,
-              }}
+                left: position.x -15,
+                top: position.y -15,
+               
+              },
+              hour===index && styles.selectedNumber
+            ]}
             >
               {hours[index]}
             </Text>
 
-            <TimeComponent rotationDegree={getIndicatorRotation(hour)} center={center} />
+            <TimeComponent radius={radius} rotationDegree={getIndicatorRotation(hour)} center={center} />
           </React.Fragment>
         ))}
       </View>
-      {/* Buttons or controls for selecting the hour */}
-      {/* <View style={{ flexDirection: 'row', marginTop: 20 }}>
-        {Array.from({ length: 12 }, (_, index) => (
-          <Text
-            key={index}
-            style={{
-              fontSize: 24,
-              marginHorizontal: 10,
-              color: index + 1 === hour ? 'blue' : 'black',
-            }}
-            onPress={() => setHour(index + 1)}
-          >
-            {index + 1}
-          </Text>
-        ))}
-      </View> */}
-    </View>
   );
 }
