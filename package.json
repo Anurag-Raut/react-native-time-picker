@@ -119,7 +119,7 @@
     },
     "plugins": {
       "@release-it/conventional-changelog": {
-        "preset": "angular"
+        "preset": "conventionalcommits"
       }
     }
   },
