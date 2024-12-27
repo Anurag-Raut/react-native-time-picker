@@ -3,11 +3,11 @@ import {
   StyleSheet,
   Text,
   View,
-  PanResponder,
+  // PanResponder,
   Animated,
-  type PanResponderGestureState,
+  // type PanResponderGestureState,
 } from 'react-native';
-import throttle from 'lodash.throttle';
+// import throttle from 'lodash.throttle';
 
 
 type Center = {
@@ -245,19 +245,19 @@ export default function TimePicker({
     NumberComponent?: (props: { value: number; position: Position; isActive: boolean }) => React.ReactNode;
     TopComponent?: React.ReactNode;
   };
-  clockStyle: Object;
-  containerStyle: Object;
-  onValueChange: ((hour: number, minute: number, period: "am" | "pm") => void)
+  clockStyle?: Object;
+  containerStyle?: Object;
+  onValueChange?: ((hour: number, minute: number, period: "am" | "pm") => void)
 
 
 }) {
   const styles = defaultStyles(colors);
   const containerRef = useRef<View | null>(null);
-  const [layout, setLayout] = useState<{
-    width: number;
-    height: number;
-    screenCenter: Center;
-  } | null>(null);
+  // const [layout, setLayout] = useState<{
+  //   width: number;
+  //   height: number;
+  //   screenCenter: Center;
+  // } | null>(null);
   const hours = [12, ...Array.from({ length: 11 }, (_, index) => index + 1)];
   const minutes = Array.from({ length: 12 }, (_, index) => index * 5);
   const [hour, setHour] = useState<number>(initialHour);
@@ -296,55 +296,55 @@ export default function TimePicker({
       console.log(_, __, ___, ____, scrX, scrY, "WEWEWE")
       screenX = scrX;
       screenY = scrY;
-      setLayout((prev) => ({ ...prev, screenCenter: { x: scrX, y: scrY } }))
+      // setLayout((prev:any) => ({ ...prev, screenCenter: { x: scrX, y: scrY } }))
     });
     setHourElements(hourElements);
     setMinuteElements(minuteElements);
-    setLayout({ width, height, screenCenter: { x: screenX, y: screenY } });
+    // setLayout({ width, height, screenCenter: { x: screenX, y: screenY } });
     console.log("SCREN CENTER", { x: screenX, y: screenY })
   };
 
-  const updateValue = (value: number, isHourMode: boolean) => {
-    if (isHourMode) {
-      setHour(value);
+  // const updateValue = (value: number, isHourMode: boolean) => {
+  //   if (isHourMode) {
+  //     setHour(value);
 
-    } else {
-      setMinute(value);
-    }
-  };
+  //   } else {
+  //     setMinute(value);
+  //   }
+  // };
 
   useEffect(() => {
     onValueChange && onValueChange(hour, minute, period);
   }, [hour, minute, period])
 
-  const throttledUpdate = throttle(
-    (gestureState: PanResponderGestureState, elements: Element[]) => {
-      const positionXScreen = gestureState.moveX - (layout?.screenCenter?.x ?? 0);
-      const positionYScreen = gestureState.moveY - (layout?.screenCenter?.y ?? 0);
-      console.log(layout?.screenCenter?.x, layout?.screenCenter?.y, "SCREEN", gestureState.moveX, gestureState.moveY, "POSITION", positionXScreen, positionYScreen)
-      let closest = 0;
-      let closestDistance = Infinity;
+  // const throttledUpdate = throttle(
+  //   (gestureState: PanResponderGestureState, elements: Element[]) => {
+  //     const positionXScreen = gestureState.moveX - (layout?.screenCenter?.x ?? 0);
+  //     const positionYScreen = gestureState.moveY - (layout?.screenCenter?.y ?? 0);
+  //     console.log(layout?.screenCenter?.x, layout?.screenCenter?.y, "SCREEN", gestureState.moveX, gestureState.moveY, "POSITION", positionXScreen, positionYScreen)
+  //     let closest = 0;
+  //     let closestDistance = Infinity;
 
-      for (let i = 0; i < elements.length; i++) {
-        const { x, y } = elements[i]!.position;
-        const distance = Math.abs(positionXScreen - x) + Math.abs(positionYScreen - y);
-        if (distance < closestDistance) {
-          closestDistance = distance;
-          closest = i;
-        }
-      }
-      updateValue(closest, isHourMode);
-    },
-    50
-  );
+  //     for (let i = 0; i < elements.length; i++) {
+  //       const { x, y } = elements[i]!.position;
+  //       const distance = Math.abs(positionXScreen - x) + Math.abs(positionYScreen - y);
+  //       if (distance < closestDistance) {
+  //         closestDistance = distance;
+  //         closest = i;
+  //       }
+  //     }
+  //     updateValue(closest, isHourMode);
+  //   },
+  //   50
+  // );
 
 
-  const panResponder = PanResponder.create({
-    onStartShouldSetPanResponder: () => true,
-    onPanResponderMove: (_, gestureState) => {
-      throttledUpdate(gestureState, isHourMode ? hourElements : minuteElements);
-    },
-  });
+  // const panResponder = PanResponder.create({
+  //   onStartShouldSetPanResponder: () => true,
+  //   onPanResponderMove: (_, gestureState) => {
+  //     throttledUpdate(gestureState, isHourMode ? hourElements : minuteElements);
+  //   },
+  // });
 
   const switchAnimation = useRef(new Animated.Value(1)).current;
 
