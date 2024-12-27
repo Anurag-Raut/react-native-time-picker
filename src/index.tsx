@@ -128,12 +128,20 @@ const defaultStyles = (colors: typeof defaultColors) =>
       flexDirection: 'column',
       justifyContent: 'space-around',
       backgroundColor: colors.unSelectedColorBackground,
+      padding: 0,
+      margin: 0,
+      borderRadius: 6,
+      overflow: "hidden"
     },
     AmPmContainerText: {
       fontSize: 12,
       paddingHorizontal: 8,
       color: colors.unSelectedColor,
+      margin: 0,
+      fontWeight: "600"
+
     },
+    periodContainer: { flex: 1, justifyContent: "center", alignItems: "center" }
   });
 
 const getIndicatorRotation = (index: number, noOfElements: number) =>
@@ -192,9 +200,9 @@ function ElementsComponent({
       <View
         style={{
 
-          height: (radius - 15),
-          transform: [{ rotate: `${getIndicatorRotation(value, elements.length)}deg` }],
-          top: (center.y - (radius - 15)),
+          height: (radius - 20),
+          transform: [{ rotate: `${getIndicatorRotation(value, elements.length-0.1)}deg` }],
+          top: (center.y - (radius - 20)),
           position: "absolute",
           transformOrigin: 'bottom',
 
@@ -204,9 +212,9 @@ function ElementsComponent({
           customComponents?.Line ||
           <View style={styles.indicatorLine}>
 
-            <View style={styles.indicatorEndComponent} >
+            {/* <View style={styles.indicatorEndComponent} >
               <View style={styles.indicatorEndComponentInner} />
-            </View>
+            </View> */}
           </View>
         }
       </View>
@@ -235,11 +243,11 @@ export default function TimePicker({
     LineComponent?: React.ReactNode;
     EndComponent?: React.ReactNode;
     NumberComponent?: (props: { value: number; position: Position; isActive: boolean }) => React.ReactNode;
-    TopComponent?:React.ReactNode;
+    TopComponent?: React.ReactNode;
   };
   clockStyle: Object;
   containerStyle: Object;
-  onValueChange:((hour:number,minute:number,period:"am"|"pm")=>void)
+  onValueChange: ((hour: number, minute: number, period: "am" | "pm") => void)
 
 
 }) {
@@ -251,7 +259,7 @@ export default function TimePicker({
     screenCenter: Center;
   } | null>(null);
   const hours = [12, ...Array.from({ length: 11 }, (_, index) => index + 1)];
-  const minutes = Array.from({ length: 60 }, (_, index) => index);
+  const minutes = Array.from({ length: 12 }, (_, index) => index * 5);
   const [hour, setHour] = useState<number>(initialHour);
   const [minute, setMinute] = useState<number>(initialMinute);
   const [period, setPeriod] = useState<'am' | 'pm'>(initialPeriod);
@@ -285,31 +293,35 @@ export default function TimePicker({
     let screenX = 0,
       screenY = 0;
     containerRef.current?.measure((_, __, ___, ____, scrX: number, scrY: number) => {
+      console.log(_, __, ___, ____, scrX, scrY, "WEWEWE")
       screenX = scrX;
       screenY = scrY;
+      setLayout((prev) => ({ ...prev, screenCenter: { x: scrX, y: scrY } }))
     });
     setHourElements(hourElements);
     setMinuteElements(minuteElements);
     setLayout({ width, height, screenCenter: { x: screenX, y: screenY } });
+    console.log("SCREN CENTER", { x: screenX, y: screenY })
   };
 
   const updateValue = (value: number, isHourMode: boolean) => {
     if (isHourMode) {
       setHour(value);
-      
+
     } else {
       setMinute(value);
     }
   };
 
-  useEffect(()=>{
-    onValueChange && onValueChange(hour,minute,period);
-  },[hour,minute,period])
+  useEffect(() => {
+    onValueChange && onValueChange(hour, minute, period);
+  }, [hour, minute, period])
 
   const throttledUpdate = throttle(
     (gestureState: PanResponderGestureState, elements: Element[]) => {
       const positionXScreen = gestureState.moveX - (layout?.screenCenter?.x ?? 0);
       const positionYScreen = gestureState.moveY - (layout?.screenCenter?.y ?? 0);
+      console.log(layout?.screenCenter?.x, layout?.screenCenter?.y, "SCREEN", gestureState.moveX, gestureState.moveY, "POSITION", positionXScreen, positionYScreen)
       let closest = 0;
       let closestDistance = Infinity;
 
@@ -358,51 +370,61 @@ export default function TimePicker({
 
   return (
     <View style={[styles.container, containerStyle]}>
-     {
-     customComponents?.TopComponent ||
-     <View style={styles.topComponent}>
-        <Text
-          onPress={() => switchMode(true)}
-          style={[
-            styles.topComponentText,
-            isHourMode && { color: colors.selectedColor, backgroundColor: colors.selectedColorBackground },
-          ]}
-        >
-          {hour.toString().padStart(2, '0')}
-        </Text>
-        <Text
-          onPress={() => switchMode(false)}
-          style={[
-            styles.topComponentText,
-            !isHourMode && { color: colors.selectedColor, backgroundColor: colors.selectedColorBackground },
-          ]}
-        >
-          {minute.toString().padStart(2, '0')}
-        </Text>
-        <View style={styles.AmPmContainer}>
+      {
+        customComponents?.TopComponent ||
+        <View style={styles.topComponent}>
           <Text
-            onPress={() => setPeriod('am')}
+            onPress={() => switchMode(true)}
             style={[
-              styles.AmPmContainerText,
-              period === 'am' && { backgroundColor: colors.selectedColorBackground, color: colors.selectedColor },
+              styles.topComponentText,
+              isHourMode && { color: colors.selectedColor, backgroundColor: colors.selectedColorBackground },
             ]}
           >
-            AM
+            {hour.toString().padStart(2, '0')}
           </Text>
           <Text
-            onPress={() => setPeriod('pm')}
+            onPress={() => switchMode(false)}
             style={[
-              styles.AmPmContainerText,
-              period === 'pm' && { backgroundColor: colors.selectedColorBackground, color: colors.selectedColor },
+              styles.topComponentText,
+              !isHourMode && { color: colors.selectedColor, backgroundColor: colors.selectedColorBackground },
             ]}
           >
-            PM
+            {minute.toString().padStart(2, '0')}
           </Text>
-        </View>
-      </View>}
+          <View style={styles.AmPmContainer}>
+            <View
+              style={[styles.periodContainer, period === 'am' && { backgroundColor: colors.selectedColorBackground }]}
+            >
+
+              <Text
+                onPress={() => setPeriod('am')}
+                style={[
+                  styles.AmPmContainerText,
+                  period === 'am' && { color: colors.selectedColor },
+                ]}
+              >
+                AM
+              </Text>
+            </View>
+            <View
+              style={[styles.periodContainer, period === 'pm' && { backgroundColor: colors.selectedColorBackground }]}
+            >
+
+              <Text
+                onPress={() => setPeriod('pm')}
+                style={[
+                  styles.AmPmContainerText,
+                  period === 'pm' && { color: colors.selectedColor },
+                ]}
+              >
+                PM
+              </Text>
+            </View>
+          </View>
+        </View>}
       <View
         ref={containerRef}
-        {...panResponder.panHandlers}
+        // {...panResponder.panHandlers}
         style={[styles.clockContainer, clockStyle, { height: radius * 2, width: radius * 2 }]}
         onLayout={handleLayout}
       >
@@ -422,7 +444,7 @@ export default function TimePicker({
             setValue={isHourMode ? setHour : setMinute}
             elements={isHourMode ? hourElements : minuteElements}
             center={center}
-            step={isHourMode ? 1 : 5}
+            step={1}
             styles={styles}
             customComponents={{
               Line: customComponents?.LineComponent,
