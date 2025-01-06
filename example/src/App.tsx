@@ -1,5 +1,5 @@
 import { View, StyleSheet } from 'react-native';
-import TimePicker from "../../src/index.tsx"
+import TimePicker from 'rn-time-picker';
 
 
 export default function App() {
