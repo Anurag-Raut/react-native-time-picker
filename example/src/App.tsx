@@ -1,11 +1,11 @@
 import { View, StyleSheet } from 'react-native';
-import TimePicker  from 'react-native-time-picker';
+import TimePicker from "../../src/index.tsx"
 
 
 export default function App() {
   return (
     <View style={styles.container}>
-     <TimePicker radius={120}/>
+     <TimePicker radius={120} clockStyle={{backgroundColor:"gray"}} containerStyle={{backgroundColor:"red"}} />
     </View>
   );
 }

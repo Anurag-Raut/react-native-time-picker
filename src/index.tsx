@@ -3,11 +3,11 @@ import {
   StyleSheet,
   Text,
   View,
-  // PanResponder,
   Animated,
-  // type PanResponderGestureState,
+  TouchableHighlight,
+  TouchableWithoutFeedback,
 } from 'react-native';
-// import throttle from 'lodash.throttle';
+import throttle from 'lodash.throttle';
 
 
 type Center = {
@@ -23,6 +23,11 @@ type Position = {
 type Element = {
   value: number;
   position: Position;
+  label: number;
+  screenPosition: {
+    x: number,
+    y: number
+  }
 };
 const defaultColors = {
   selectedColor: 'rgb(76, 175, 80)',
@@ -53,13 +58,14 @@ const defaultStyles = (colors: typeof defaultColors) =>
       padding: 10,
       borderRadius: 8,
       fontWeight: '500',
+      color: colors.unSelectedColor
     },
     clockContainer: {
       justifyContent: 'center',
       alignItems: 'center',
       borderRadius: 10000,
       position: 'relative',
-      backgroundColor: "gray"
+      backgroundColor: "white"
     },
     clock: {
       width: '100%',
@@ -70,13 +76,14 @@ const defaultStyles = (colors: typeof defaultColors) =>
     },
     inactiveNumber: {
       position: 'absolute',
-      fontSize: 18,
+      fontSize: 15,
       fontWeight: 'bold',
       height: 35,
       width: 35,
       textAlign: 'center',
       textAlignVertical: 'center',
-      zIndex: 10
+      zIndex: 10,
+      color: "white"
     },
     indicatorLine: {
       width: 2,
@@ -138,7 +145,7 @@ const defaultStyles = (colors: typeof defaultColors) =>
       paddingHorizontal: 8,
       color: colors.unSelectedColor,
       margin: 0,
-      fontWeight: "600"
+      fontWeight: "600",
 
     },
     periodContainer: { flex: 1, justifyContent: "center", alignItems: "center" }
@@ -156,6 +163,8 @@ function ElementsComponent({
   step = 1,
   styles,
   customComponents,
+  index,
+  setIndex
 
 }: {
   radius: number;
@@ -170,38 +179,43 @@ function ElementsComponent({
     EndComponent?: React.ReactNode;
     NumberComponent?: (props: { value: number; position: Position; isActive: boolean }) => React.ReactNode;
   };
+  index: number;
+  setIndex: Dispatch<SetStateAction<number>>;
 
 }) {
+
   return (
     <>
-      {elements.map(({ position, value: elementValue }, index) => (
-        index % step === 0 && (
+      {elements.map(({ position, value: elementValue, label }, currIndex) => (
+        (index % step) === 0 && (
           customComponents?.NumberComponent ? (
             customComponents.NumberComponent({ value: elementValue, position, isActive: value === index })
           ) : (
             <Text
-              key={index}
-              onPress={() => setValue(index)}
+
+              key={currIndex}
+              onPress={() => { setValue(elementValue); setIndex(currIndex) }}
               style={[
                 styles.inactiveNumber,
                 {
                   left: position.x - 15,
                   top: position.y - 15,
                 },
-                value === index && styles.activeNumber,
+                (index === currIndex) && styles.activeNumber,
               ]}
             >
-              {elementValue}
+              {label}
             </Text>
           )
         )
       ))}
 
       <View
+        pointerEvents={"none"}
         style={{
 
           height: (radius - 20),
-          transform: [{ rotate: `${getIndicatorRotation(value, elements.length-0.1)}deg` }],
+          transform: [{ rotate: `${getIndicatorRotation(index, elements.length - 0.1)}deg` }],
           top: (center.y - (radius - 20)),
           position: "absolute",
           transformOrigin: 'bottom',
@@ -210,12 +224,7 @@ function ElementsComponent({
       >
         {
           customComponents?.Line ||
-          <View style={styles.indicatorLine}>
-
-            {/* <View style={styles.indicatorEndComponent} >
-              <View style={styles.indicatorEndComponentInner} />
-            </View> */}
-          </View>
+          <View style={styles.indicatorLine} />
         }
       </View>
     </>
@@ -225,7 +234,7 @@ function ElementsComponent({
 export default function TimePicker({
   radius,
   colors = defaultColors,
-  initialHour = 0,
+  initialHour = 12,
   initialMinute = 0,
   initialPeriod = 'am',
   customComponents,
@@ -253,11 +262,7 @@ export default function TimePicker({
 }) {
   const styles = defaultStyles(colors);
   const containerRef = useRef<View | null>(null);
-  // const [layout, setLayout] = useState<{
-  //   width: number;
-  //   height: number;
-  //   screenCenter: Center;
-  // } | null>(null);
+
   const hours = [12, ...Array.from({ length: 11 }, (_, index) => index + 1)];
   const minutes = Array.from({ length: 12 }, (_, index) => index * 5);
   const [hour, setHour] = useState<number>(initialHour);
@@ -267,6 +272,7 @@ export default function TimePicker({
   const [center, setCenter] = useState<Center>({ x: 0, y: 0 });
   const [hourElements, setHourElements] = useState<Element[]>([]);
   const [minuteElements, setMinuteElements] = useState<Element[]>([]);
+  const [index, setIndex] = useState(0);
 
   const handleLayout = (event: any) => {
     const { width, height } = event.nativeEvent.layout;
@@ -282,69 +288,26 @@ export default function TimePicker({
       const angle = (i * Math.PI) / (hours.length / 2) - Math.PI / 2;
       const x = centerX + numbersRadius * Math.cos(angle);
       const y = centerY + numbersRadius * Math.sin(angle);
-      hourElements.push({ position: { x, y }, value: hours[i]! });
+      hourElements.push({ position: { x, y }, value: hours[i]!, label: i,screenPosition: { x: 0, y: 0 } });
     }
     for (let i = 0; i < minutes.length; i++) {
       const angle = (i * Math.PI) / (minutes.length / 2) - Math.PI / 2;
       const x = centerX + numbersRadius * Math.cos(angle);
       const y = centerY + numbersRadius * Math.sin(angle);
-      minuteElements.push({ position: { x, y }, value: minutes[i]! });
+      minuteElements.push({ position: { x, y }, value: minutes[i]!, label: i * 5, screenPosition: { x: 0, y: 0 } });
     }
-    let screenX = 0,
-      screenY = 0;
-    containerRef.current?.measure((_, __, ___, ____, scrX: number, scrY: number) => {
-      console.log(_, __, ___, ____, scrX, scrY, "WEWEWE")
-      screenX = scrX;
-      screenY = scrY;
-      // setLayout((prev:any) => ({ ...prev, screenCenter: { x: scrX, y: scrY } }))
-    });
+
     setHourElements(hourElements);
     setMinuteElements(minuteElements);
-    // setLayout({ width, height, screenCenter: { x: screenX, y: screenY } });
-    console.log("SCREN CENTER", { x: screenX, y: screenY })
+
+
   };
 
-  // const updateValue = (value: number, isHourMode: boolean) => {
-  //   if (isHourMode) {
-  //     setHour(value);
-
-  //   } else {
-  //     setMinute(value);
-  //   }
-  // };
-
   useEffect(() => {
-    onValueChange && onValueChange(hour, minute, period);
+    if (onValueChange) {
+      onValueChange(hour, minute, period);
+    }
   }, [hour, minute, period])
-
-  // const throttledUpdate = throttle(
-  //   (gestureState: PanResponderGestureState, elements: Element[]) => {
-  //     const positionXScreen = gestureState.moveX - (layout?.screenCenter?.x ?? 0);
-  //     const positionYScreen = gestureState.moveY - (layout?.screenCenter?.y ?? 0);
-  //     console.log(layout?.screenCenter?.x, layout?.screenCenter?.y, "SCREEN", gestureState.moveX, gestureState.moveY, "POSITION", positionXScreen, positionYScreen)
-  //     let closest = 0;
-  //     let closestDistance = Infinity;
-
-  //     for (let i = 0; i < elements.length; i++) {
-  //       const { x, y } = elements[i]!.position;
-  //       const distance = Math.abs(positionXScreen - x) + Math.abs(positionYScreen - y);
-  //       if (distance < closestDistance) {
-  //         closestDistance = distance;
-  //         closest = i;
-  //       }
-  //     }
-  //     updateValue(closest, isHourMode);
-  //   },
-  //   50
-  // );
-
-
-  // const panResponder = PanResponder.create({
-  //   onStartShouldSetPanResponder: () => true,
-  //   onPanResponderMove: (_, gestureState) => {
-  //     throttledUpdate(gestureState, isHourMode ? hourElements : minuteElements);
-  //   },
-  // });
 
   const switchAnimation = useRef(new Animated.Value(1)).current;
 
@@ -363,13 +326,57 @@ export default function TimePicker({
     });
   }
 
+
+
   const scaleValue = switchAnimation.interpolate({
     inputRange: [0, 1],
     outputRange: [1.2, 1],
   });
 
+  const updateValue = (closestIndex: any, hourMode: any) => {
+
+    setIndex(closestIndex)
+    if (hourMode) {
+      setHour(hourElements[closestIndex]?.value ?? 0);
+    }
+    else {
+      setMinute(minuteElements[closestIndex]?.value ?? 0);
+
+    }
+  }
+
+  const throttledUpdate = throttle(
+    async (gestureState: { moveX: number, moveY: number }, elements: Element[]) => {
+      const positionXScreen = gestureState.moveX;
+      const positionYScreen = gestureState.moveY;
+      let closest = 0;
+      let closestDistance = Infinity;
+
+      for (let i = 0; i < elements.length; i++) {
+        const element = elements[i];
+        const { position } = element!;
+        const distance = Math.sqrt(
+          Math.pow(positionXScreen - position.x, 2) +
+          Math.pow(positionYScreen - position.y, 2)
+        );
+
+        if (distance < closestDistance) {
+          closestDistance = distance;
+          closest = i;
+        }
+      }
+      updateValue(closest, isHourMode);
+    },
+    50
+  );
+
+
+
+
+
   return (
-    <View style={[styles.container, containerStyle]}>
+    <View
+      style={[styles.container, containerStyle]}>
       {
         customComponents?.TopComponent ||
         <View style={styles.topComponent}>
@@ -380,7 +387,7 @@ export default function TimePicker({
               isHourMode && { color: colors.selectedColor, backgroundColor: colors.selectedColorBackground },
             ]}
           >
-            {hour.toString().padStart(2, '0')}
+            {(hour % 12).toString().padStart(2, '0')}
           </Text>
           <Text
             onPress={() => switchMode(false)}
@@ -391,70 +398,82 @@ export default function TimePicker({
           >
             {minute.toString().padStart(2, '0')}
           </Text>
-          <View style={styles.AmPmContainer}>
-            <View
-              style={[styles.periodContainer, period === 'am' && { backgroundColor: colors.selectedColorBackground }]}
-            >
-
-              <Text
-                onPress={() => setPeriod('am')}
-                style={[
-                  styles.AmPmContainerText,
-                  period === 'am' && { color: colors.selectedColor },
-                ]}
+          <TouchableHighlight onPress={() => { setPeriod((prev) => prev === "am" ? "pm" : "am") }} style={styles.AmPmContainer}>
+            <>
+              <View
+                style={[styles.periodContainer, period === 'am' && { backgroundColor: colors.selectedColorBackground }]}
               >
-                AM
-              </Text>
-            </View>
-            <View
-              style={[styles.periodContainer, period === 'pm' && { backgroundColor: colors.selectedColorBackground }]}
-            >
 
-              <Text
-                onPress={() => setPeriod('pm')}
-                style={[
-                  styles.AmPmContainerText,
-                  period === 'pm' && { color: colors.selectedColor },
-                ]}
+                <Text
+                  style={[
+                    styles.AmPmContainerText,
+                    period === 'am' && { color: colors.selectedColor },
+                  ]}
+                >
+                  AM
+                </Text>
+              </View>
+              <View
+                style={[styles.periodContainer, period === 'pm' && { backgroundColor: colors.selectedColorBackground }]}
               >
-                PM
-              </Text>
-            </View>
-          </View>
+
+                <Text
+                  style={[
+                    styles.AmPmContainerText,
+                    period === 'pm' && { color: colors.selectedColor },
+                  ]}
+                >
+                  PM
+                </Text>
+              </View>
+            </>
+          </TouchableHighlight>
         </View>}
-      <View
-        ref={containerRef}
-        // {...panResponder.panHandlers}
-        style={[styles.clockContainer, clockStyle, { height: radius * 2, width: radius * 2 }]}
-        onLayout={handleLayout}
-      >
-        {customComponents?.CenterComponent || <View style={styles.centerComponent} />}
-        <Animated.View
-          style={[
-            styles.clock,
-            {
-              opacity: switchAnimation,
-              transform: [{ scale: scaleValue }],
-            },
-          ]}
-        >
-          <ElementsComponent
-            radius={radius}
-            value={isHourMode ? hour : minute}
-            setValue={isHourMode ? setHour : setMinute}
-            elements={isHourMode ? hourElements : minuteElements}
-            center={center}
-            step={1}
-            styles={styles}
-            customComponents={{
-              Line: customComponents?.LineComponent,
-              EndComponent: customComponents?.EndComponent,
-              NumberComponent: customComponents?.NumberComponent,
-            }}
+      <TouchableWithoutFeedback>
+        <View
+          ref={containerRef}
+          onTouchStart={(event) => {
+            throttledUpdate({ moveX: event.nativeEvent.locationX, moveY: event.nativeEvent.locationY }, isHourMode ? hourElements : minuteElements)
+          }}
+          onTouchMove={(event) => {
+            throttledUpdate({ moveX: event.nativeEvent.locationX, moveY: event.nativeEvent.locationY }, isHourMode ? hourElements : minuteElements)
+          }}
 
-          />
-        </Animated.View>
-      </View>
+          style={[styles.clockContainer, clockStyle, { height: radius * 2, width: radius * 2 }]}
+          onLayout={handleLayout}
+        >
+          {customComponents?.CenterComponent || <View style={styles.centerComponent} />}
+          <Animated.View
+            pointerEvents={"none"}
+            style={[
+              styles.clock,
+              {
+                opacity: switchAnimation,
+                transform: [{ scale: scaleValue }],
+              },
+            ]}
+          >
+            <ElementsComponent
+              radius={radius}
+              value={isHourMode ? hour : minute}
+              setValue={isHourMode ? setHour : setMinute}
+              elements={isHourMode ? hourElements : minuteElements}
+              center={center}
+              step={1}
+              styles={styles}
+              customComponents={{
+                Line: customComponents?.LineComponent,
+                EndComponent: customComponents?.EndComponent,
+                NumberComponent: customComponents?.NumberComponent,
+              }}
+
+              setIndex={setIndex}
+              index={index}
+
+            />
+          </Animated.View>
+        </View>
+      </TouchableWithoutFeedback>
     </View>
   );
 }
