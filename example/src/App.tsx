@@ -5,7 +5,7 @@ import TimePicker from "../../src/index.tsx"
 export default function App() {
   return (
     <View style={styles.container}>
-     <TimePicker radius={120} clockStyle={{backgroundColor:"gray"}} containerStyle={{backgroundColor:"red"}} />
+     <TimePicker radius={120} clockStyle={{backgroundColor:"gray"}} containerStyle={{backgroundColor:"blue"}} />
     </View>
   );
 }

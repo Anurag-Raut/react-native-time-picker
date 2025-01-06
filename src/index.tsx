@@ -197,11 +197,12 @@ function ElementsComponent({
               onPress={() => { setValue(elementValue); setIndex(currIndex) }}
               style={[
                 styles.inactiveNumber,
-                {
-                  left: position.x - 15,
-                  top: position.y - 15,
-                },
+               
                 (index === currIndex) && styles.activeNumber,
+                {
+                  left: (position.x -styles.inactiveNumber.width/2),
+                  top: (position.y -styles.inactiveNumber.height/2) ,
+                },
               ]}
             >
               {label}
@@ -215,7 +216,7 @@ function ElementsComponent({
         style={{
 
           height: (radius - 20),
-          transform: [{ rotate: `${getIndicatorRotation(index, elements.length - 0.1)}deg` }],
+          transform: [{ rotate: `${getIndicatorRotation(index, elements.length )}deg` }],
           top: (center.y - (radius - 20)),
           position: "absolute",
           transformOrigin: 'bottom',
@@ -278,7 +279,7 @@ export default function TimePicker({
     const { width, height } = event.nativeEvent.layout;
     const centerX = width / 2;
     const centerY = height / 2;
-    const numbersRadius = radius - 30;
+    const numbersRadius = radius - 20;
     const hourElements: Element[] = [];
     const minuteElements: Element[] = [];
 
@@ -288,6 +289,7 @@ export default function TimePicker({
       const angle = (i * Math.PI) / (hours.length / 2) - Math.PI / 2;
       const x = centerX + numbersRadius * Math.cos(angle);
       const y = centerY + numbersRadius * Math.sin(angle);
+      console.log("x",x,"y",y)
       hourElements.push({ position: { x, y }, value: hours[i]!, label: i,screenPosition: { x: 0, y: 0 } });
     }
     for (let i = 0; i < minutes.length; i++) {
@@ -328,7 +330,7 @@ export default function TimePicker({
 
 
 
-  const scaleValue = switchAnimation.interpolate({
+  const scaleValueForTransistion = switchAnimation.interpolate({
     inputRange: [0, 1],
     outputRange: [1.2, 1],
   });
@@ -429,7 +431,6 @@ export default function TimePicker({
             </>
           </TouchableHighlight>
         </View>}
-      <TouchableWithoutFeedback>
         <View
           ref={containerRef}
           onTouchStart={(event) => {
@@ -449,7 +450,7 @@ export default function TimePicker({
               styles.clock,
               {
                 opacity: switchAnimation,
-                transform: [{ scale: scaleValue }],
+                transform: [{ scale: scaleValueForTransistion }],
               },
             ]}
           >
@@ -473,7 +474,6 @@ export default function TimePicker({
             />
           </Animated.View>
         </View>
-      </TouchableWithoutFeedback>
     </View>
   );
 }
