@@ -439,7 +439,12 @@ export default function TimePicker({
           onTouchMove={(event) => {
             throttledUpdate({ moveX: event.nativeEvent.locationX, moveY: event.nativeEvent.locationY }, isHourMode ? hourElements : minuteElements)
           }}
-
+          onTouchEnd={(event) => {
+            if(isHourMode){
+              throttledUpdate({ moveX: event.nativeEvent.locationX, moveY: event.nativeEvent.locationY }, isHourMode ? hourElements : minuteElements)
+              switchMode(false)
+            }
+          }}
           style={[styles.clockContainer, clockStyle, { height: radius * 2, width: radius * 2 }]}
           onLayout={handleLayout}
         >
