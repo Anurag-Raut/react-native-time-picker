@@ -5,7 +5,6 @@ import {
   View,
   Animated,
   TouchableHighlight,
-  TouchableWithoutFeedback,
 } from 'react-native';
 import throttle from 'lodash.throttle';
 
@@ -149,7 +148,8 @@ const defaultStyles = (colors: typeof defaultColors) =>
 
     },
     periodContainer: { flex: 1, justifyContent: "center", alignItems: "center" }
-  });
+});
+
 
 const getIndicatorRotation = (index: number, noOfElements: number) =>
   (index / noOfElements) * 360;
@@ -232,6 +232,31 @@ function ElementsComponent({
   );
 }
 
+/**
+ * TimePicker Component
+ * 
+ * A customizable clock-style time picker that supports hours, minutes, and period (AM/PM).
+ * 
+ * @param {Object} props - The properties for the TimePicker component.
+ * @param {number} props.radius - The radius of the clock circle.
+ * @param {Object} [props.colors] - Custom colors for the clock elements.
+ * @param {number} [props.initialHour=12] - The initial hour value (default: 12).
+ * @param {number} [props.initialMinute=0] - The initial minute value (default: 0).
+ * @param {'am' | 'pm'} [props.initialPeriod='am'] - The initial period (default: 'am').
+ * @param {Object} [props.customComponents] - Custom components for various parts of the clock.
+ * @param {React.ReactNode} [props.customComponents.CenterComponent] - Custom center element of the clock.
+ * @param {React.ReactNode} [props.customComponents.LineComponent] - Custom line element connecting the center to numbers.
+ * @param {React.ReactNode} [props.customComponents.EndComponent] - Custom end component for clock hand.
+ * @param {(props: { value: number; position: Position; isActive: boolean }) => React.ReactNode} [props.customComponents.NumberComponent]
+ *    - Custom number component for clock labels.
+ * @param {React.ReactNode} [props.customComponents.TopComponent] - Custom top section displaying hours, minutes, and AM/PM.
+ * @param {Object} [props.clockStyle={}] - Custom styles for the clock container.
+ * @param {Object} [props.containerStyle={}] - Custom styles for the outer container.
+ * @param {(hour: number, minute: number, period: "am" | "pm") => void} [props.onValueChange] 
+ *    - Callback function triggered when the time value changes.
+ * 
+ * @returns {JSX.Element} A fully customizable clock-style time picker component.
+ */
 export default function TimePicker({
   radius,
   colors = defaultColors,
@@ -301,8 +326,6 @@ export default function TimePicker({
 
     setHourElements(hourElements);
     setMinuteElements(minuteElements);
-
-
   };
 
   useEffect(() => {
