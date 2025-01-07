@@ -1,6 +1,6 @@
 {
   "name": "rn-time-picker",
-  "version": "0.4.5",
+  "version": "1.0.0",
   "description": "A highly customizable react native time picker library",
   "source": "./src/index.tsx",
   "main": "./lib/commonjs/index.js",
