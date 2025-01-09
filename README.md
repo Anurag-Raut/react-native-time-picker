@@ -6,9 +6,6 @@ A customizable clock-style time picker component for React Native. This library 
 - Customization options of each component
 - Drag-and-drop time selection 
 
-## Demo
-
-
 
 ## Installation
 

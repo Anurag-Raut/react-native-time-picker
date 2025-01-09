@@ -251,7 +251,7 @@ function ElementsComponent({
 
               ]}
             >
-              {label}
+              {elementValue}
             </Text>
           )
         )
@@ -470,7 +470,7 @@ export default function TimePicker({
               isHourMode && { color: colors.topActiveTextColor, backgroundColor: colors.topActiveColor },
             ]}
           >
-            {(hour % 12).toString().padStart(2, '0')}
+            {(hour ).toString().padStart(2, '0')}
           </Text>
           <Text
             onPress={() => switchMode(Mode.MINUTE)}
