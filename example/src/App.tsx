@@ -1,12 +1,12 @@
 import { StyleSheet , View } from 'react-native';
 import BasicTimePickerExample from './components/basicComponent';
-import CusttomizedTimePickerExample from './components/customizedComponent';
+import CustomizedTimePickerExample from './components/customizedComponent';
 
 export default function App() {
   return (
     <View style={styles.container} >
     <BasicTimePickerExample/>
-    <CusttomizedTimePickerExample/>
+    <CustomizedTimePickerExample/>
     </View>
   );
 }

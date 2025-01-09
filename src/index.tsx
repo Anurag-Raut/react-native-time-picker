@@ -285,6 +285,7 @@ function ElementsComponent({
  * 
  * @param {Object} props - The properties for the TimePicker component.
  * @param {number} props.radius - The radius of the clock circle.
+ * @param {number} [props.numberRadius] - The radius for positioning clock numbers (default: radius - 40).
  * @param {Object} [props.colors] - Custom colors for the clock elements.
  * @param {number} [props.initialHour=12] - The initial hour value (default: 12).
  * @param {number} [props.initialMinute=0] - The initial minute value (default: 0).
@@ -295,9 +296,9 @@ function ElementsComponent({
  * @param {React.ReactNode} [props.customComponents.EndComponent] - Custom end component for clock hand.
  * @param {(props: { value: number; isActive: boolean }) => React.ReactNode} [props.customComponents.NumberComponent]
  *    - Custom number component for clock labels.
- * @param {React.ReactNode} [props.customComponents.TopComponent] - Custom top section displaying hours, minutes, and AM/PM.
- * @param {Object} [props.clockStyle={}] - Custom styles for the clock container.
- * @param {Object} [props.containerStyle={}] - Custom styles for the outer container.
+ * @param {(props: { hour: number, minute: number, switchMode: (mode: Mode) => void, activeMode: Mode, period: "am" | "pm", setPeriod: (period: "am" | "pm") => void }) => React.ReactNode} 
+ *    [props.customComponents.TopComponent] - Custom top section displaying hours, minutes, and AM/PM.
+ * @param {Object} [props.customStyles] - Custom styles for the TimePicker and its elements.
  * @param {(hour: number, minute: number, period: "am" | "pm") => void} [props.onValueChange] 
  *    - Callback function triggered when the time value changes.
  * 
@@ -305,7 +306,7 @@ function ElementsComponent({
  */
 export default function TimePicker({
   radius,
-  numberRadius,
+  numberRadius=radius-40,
   colors = defaultColors,
   initialHour = 12,
   initialMinute = 0,
