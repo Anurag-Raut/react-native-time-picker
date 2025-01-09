@@ -47,6 +47,13 @@
     "release": "release-it"
   },
   "keywords": [
+    "rn-time-picker",
+    "time-picker",
+    "time picker",
+    "date time picker",
+    "time selector",
+    "react native time selector",
+    "react native time picker",
     "react-native",
     "ios",
     "android"
