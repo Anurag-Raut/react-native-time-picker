@@ -3,9 +3,9 @@
 A customizable clock-style time picker component for React Native. This library allows you to create a visually appealing and fully customizable time picker that supports hours, minutes, and period selection (AM/PM).
 
 ## Features
-- Customization options of each component
-- Drag-and-drop time selection 
 
+- Customization options of each component
+- Drag-and-drop time selection
 
 ## Installation
 
