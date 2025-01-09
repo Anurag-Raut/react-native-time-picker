@@ -209,7 +209,7 @@ function ElementsComponent({
 
   return (
     <>
-      {elements.map(({ position, value: elementValue, label }, currIndex) => (
+      {elements.map(({ position, value: elementValue }, currIndex) => (
         (index % step) === 0 && (
           customComponents?.NumberComponent ? (
             <View 
