@@ -1,0 +1,1335 @@
+{
+    "version": "2.3.9",
+    "fields": [
+        "title",
+        "text"
+    ],
+    "fieldVectors": [
+        [
+            "title//react-native-time-picker/",
+            [
+                0,
+                0.16,
+                1,
+                0.16,
+                2,
+                0.118,
+                3,
+                0.118
+            ]
+        ],
+        [
+            "text//react-native-time-picker/",
+            [
+                0,
+                0.256,
+                1,
+                0.256,
+                2,
+                0.229,
+                3,
+                0.213,
+                4,
+                0.188,
+                5,
+                0.715,
+                6,
+                0.973,
+                7,
+                0.973,
+                8,
+                0.715,
+                9,
+                0.715,
+                10,
+                0.715,
+                11,
+                0.715,
+                12,
+                0.715,
+                13,
+                0.715,
+                14,
+                0.715,
+                15,
+                0.715,
+                16,
+                0.715,
+                17,
+                0.715,
+                18,
+                0.715,
+                19,
+                0.715,
+                20,
+                0.715,
+                21,
+                0.715,
+                22,
+                0.715,
+                23,
+                0.973,
+                24,
+                0.715,
+                25,
+                0.715,
+                26,
+                0.188,
+                27,
+                0.715
+            ]
+        ],
+        [
+            "title//react-native-time-picker/documentation/getting-started/",
+            [
+                28,
+                0.211,
+                29,
+                0.211
+            ]
+        ],
+        [
+            "text//react-native-time-picker/documentation/getting-started/",
+            [
+                2,
+                0.207,
+                3,
+                0.18,
+                4,
+                0.246,
+                26,
+                0.246,
+                28,
+                0.177,
+                29,
+                0.177,
+                30,
+                0.673,
+                31,
+                0.934,
+                32,
+                0.934,
+                33,
+                0.673,
+                34,
+                0.934,
+                35,
+                0.673,
+                36,
+                0.673,
+                37,
+                0.673,
+                38,
+                0.673,
+                39,
+                0.673,
+                40,
+                0.673,
+                41,
+                0.673,
+                42,
+                0.673,
+                43,
+                0.673,
+                44,
+                0.673,
+                45,
+                0.673,
+                46,
+                0.673,
+                47,
+                0.673,
+                48,
+                0.673,
+                49,
+                0.673,
+                50,
+                0.673,
+                51,
+                0.673,
+                52,
+                0.673,
+                53,
+                0.673,
+                54,
+                0.673,
+                55,
+                0.673,
+                56,
+                0.934,
+                57,
+                0.673,
+                58,
+                0.673
+            ]
+        ]
+    ],
+    "invertedIndex": [
+        [
+            "\"rn",
+            {
+                "_index": 41,
+                "title": {},
+                "text": {
+                    "/react-native-time-picker/documentation/getting-started/": {
+                        "position": [
+                            [
+                                154,
+                                3
+                            ]
+                        ]
+                    }
+                }
+            }
+        ],
+        [
+            "(",
+            {
+                "_index": 51,
+                "title": {},
+                "text": {
+                    "/react-native-time-picker/documentation/getting-started/": {
+                        "position": [
+                            [
+                                228,
+                                1
+                            ]
+                        ]
+                    }
+                }
+            }
+        ],
+        [
+            "()",
+            {
+                "_index": 48,
+                "title": {},
+                "text": {
+                    "/react-native-time-picker/documentation/getting-started/": {
+                        "position": [
+                            [
+                                208,
+                                2
+                            ]
+                        ]
+                    }
+                }
+            }
+        ],
+        [
+            ");",
+            {
+                "_index": 58,
+                "title": {},
+                "text": {
+                    "/react-native-time-picker/documentation/getting-started/": {
+                        "position": [
+                            [
+                                280,
+                                2
+                            ]
+                        ]
+                    }
+                }
+            }
+        ],
+        [
+            "/>",
+            {
+                "_index": 57,
+                "title": {},
+                "text": {
+                    "/react-native-time-picker/documentation/getting-started/": {
+                        "position": [
+                            [
+                                271,
+                                2
+                            ]
+                        ]
+                    }
+                }
+            }
+        ],
+        [
+            "120",
+            {
+                "_index": 55,
+                "title": {},
+                "text": {
+                    "/react-native-time-picker/documentation/getting-started/": {
+                        "position": [
+                            [
+                                264,
+                                3
+                            ]
+                        ]
+                    }
+                }
+            }
+        ],
+        [
+            ":",
+            {
+                "_index": 23,
+                "title": {},
+                "text": {
+                    "/react-native-time-picker/": {
+                        "position": [
+                            [
+                                201,
+                                1
+                            ],
+                            [
+                                264,
+                                1
+                            ]
+                        ]
+                    }
+                }
+            }
+        ],
+        [
+            ";",
+            {
+                "_index": 43,
+                "title": {},
+                "text": {
+                    "/react-native-time-picker/documentation/getting-started/": {
+                        "position": [
+                            [
+                                171,
+                                1
+                            ]
+                        ]
+                    }
+                }
+            }
+        ],
+        [
+            "<",
+            {
+                "_index": 52,
+                "title": {},
+                "text": {
+                    "/react-native-time-picker/documentation/getting-started/": {
+                        "position": [
+                            [
+                                240,
+                                1
+                            ]
+                        ]
+                    }
+                }
+            }
+        ],
+        [
+            "={",
+            {
+                "_index": 54,
+                "title": {},
+                "text": {
+                    "/react-native-time-picker/documentation/getting-started/": {
+                        "position": [
+                            [
+                                261,
+                                2
+                            ]
+                        ]
+                    }
+                }
+            }
+        ],
+        [
+            "a",
+            {
+                "_index": 5,
+                "title": {},
+                "text": {
+                    "/react-native-time-picker/": {
+                        "position": [
+                            [
+                                25,
+                                1
+                            ]
+                        ]
+                    }
+                }
+            }
+        ],
+        [
+            "add",
+            {
+                "_index": 33,
+                "title": {},
+                "text": {
+                    "/react-native-time-picker/documentation/getting-started/": {
+                        "position": [
+                            [
+                                46,
+                                3
+                            ]
+                        ]
+                    }
+                }
+            }
+        ],
+        [
+            "am/pm",
+            {
+                "_index": 15,
+                "title": {},
+                "text": {
+                    "/react-native-time-picker/": {
+                        "position": [
+                            [
+                                136,
+                                5
+                            ]
+                        ]
+                    }
+                }
+            }
+        ],
+        [
+            "and",
+            {
+                "_index": 7,
+                "title": {},
+                "text": {
+                    "/react-native-time-picker/": {
+                        "position": [
+                            [
+                                40,
+                                3
+                            ],
+                            [
+                                163,
+                                3
+                            ]
+                        ]
+                    }
+                }
+            }
+        ],
+        [
+            "app",
+            {
+                "_index": 47,
+                "title": {},
+                "text": {
+                    "/react-native-time-picker/documentation/getting-started/": {
+                        "position": [
+                            [
+                                204,
+                                3
+                            ]
+                        ]
+                    }
+                }
+            }
+        ],
+        [
+            "appealing",
+            {
+                "_index": 9,
+                "title": {},
+                "text": {
+                    "/react-native-time-picker/": {
+                        "position": [
+                            [
+                                53,
+                                9
+                            ]
+                        ]
+                    }
+                }
+            }
+        ],
+        [
+            "basic",
+            {
+                "_index": 36,
+                "title": {},
+                "text": {
+                    "/react-native-time-picker/documentation/getting-started/": {
+                        "position": [
+                            [
+                                105,
+                                5
+                            ]
+                        ]
+                    }
+                }
+            }
+        ],
+        [
+            "components.",
+            {
+                "_index": 14,
+                "title": {},
+                "text": {
+                    "/react-native-time-picker/": {
+                        "position": [
+                            [
+                                124,
+                                11
+                            ]
+                        ]
+                    }
+                }
+            }
+        ],
+        [
+            "customizable",
+            {
+                "_index": 6,
+                "title": {},
+                "text": {
+                    "/react-native-time-picker/": {
+                        "position": [
+                            [
+                                27,
+                                12
+                            ],
+                            [
+                                111,
+                                12
+                            ]
+                        ]
+                    }
+                }
+            }
+        ],
+        [
+            "default",
+            {
+                "_index": 45,
+                "title": {},
+                "text": {
+                    "/react-native-time-picker/documentation/getting-started/": {
+                        "position": [
+                            [
+                                185,
+                                7
+                            ]
+                        ]
+                    }
+                }
+            }
+        ],
+        [
+            "drag",
+            {
+                "_index": 18,
+                "title": {},
+                "text": {
+                    "/react-native-time-picker/": {
+                        "position": [
+                            [
+                                158,
+                                4
+                            ]
+                        ]
+                    }
+                }
+            }
+        ],
+        [
+            "drop",
+            {
+                "_index": 19,
+                "title": {},
+                "text": {
+                    "/react-native-time-picker/": {
+                        "position": [
+                            [
+                                167,
+                                4
+                            ]
+                        ]
+                    }
+                }
+            }
+        ],
+        [
+            "examples",
+            {
+                "_index": 12,
+                "title": {},
+                "text": {
+                    "/react-native-time-picker/": {
+                        "position": [
+                            [
+                                93,
+                                8
+                            ]
+                        ]
+                    }
+                }
+            }
+        ],
+        [
+            "export",
+            {
+                "_index": 44,
+                "title": {},
+                "text": {
+                    "/react-native-time-picker/documentation/getting-started/": {
+                        "position": [
+                            [
+                                177,
+                                6
+                            ]
+                        ]
+                    }
+                }
+            }
+        ],
+        [
+            "features",
+            {
+                "_index": 13,
+                "title": {},
+                "text": {
+                    "/react-native-time-picker/": {
+                        "position": [
+                            [
+                                102,
+                                8
+                            ]
+                        ]
+                    }
+                }
+            }
+        ],
+        [
+            "for",
+            {
+                "_index": 10,
+                "title": {},
+                "text": {
+                    "/react-native-time-picker/": {
+                        "position": [
+                            [
+                                75,
+                                3
+                            ]
+                        ]
+                    }
+                }
+            }
+        ],
+        [
+            "from",
+            {
+                "_index": 40,
+                "title": {},
+                "text": {
+                    "/react-native-time-picker/documentation/getting-started/": {
+                        "position": [
+                            [
+                                148,
+                                4
+                            ]
+                        ]
+                    }
+                }
+            }
+        ],
+        [
+            "function",
+            {
+                "_index": 46,
+                "title": {},
+                "text": {
+                    "/react-native-time-picker/documentation/getting-started/": {
+                        "position": [
+                            [
+                                194,
+                                8
+                            ]
+                        ]
+                    }
+                }
+            }
+        ],
+        [
+            "getting",
+            {
+                "_index": 28,
+                "title": {
+                    "/react-native-time-picker/documentation/getting-started/": {
+                        "position": [
+                            [
+                                0,
+                                7
+                            ]
+                        ]
+                    }
+                },
+                "text": {
+                    "/react-native-time-picker/documentation/getting-started/": {
+                        "position": [
+                            [
+                                0,
+                                7
+                            ]
+                        ]
+                    }
+                }
+            }
+        ],
+        [
+            "github",
+            {
+                "_index": 22,
+                "title": {},
+                "text": {
+                    "/react-native-time-picker/": {
+                        "position": [
+                            [
+                                194,
+                                6
+                            ]
+                        ]
+                    }
+                }
+            }
+        ],
+        [
+            "https://github.com/anurag",
+            {
+                "_index": 24,
+                "title": {},
+                "text": {
+                    "/react-native-time-picker/": {
+                        "position": [
+                            [
+                                204,
+                                25
+                            ]
+                        ]
+                    }
+                }
+            }
+        ],
+        [
+            "https://www.npmjs.com/package/rn",
+            {
+                "_index": 27,
+                "title": {},
+                "text": {
+                    "/react-native-time-picker/": {
+                        "position": [
+                            [
+                                267,
+                                32
+                            ]
+                        ]
+                    }
+                }
+            }
+        ],
+        [
+            "import",
+            {
+                "_index": 39,
+                "title": {},
+                "text": {
+                    "/react-native-time-picker/documentation/getting-started/": {
+                        "position": [
+                            [
+                                128,
+                                6
+                            ]
+                        ]
+                    }
+                }
+            }
+        ],
+        [
+            "install",
+            {
+                "_index": 35,
+                "title": {},
+                "text": {
+                    "/react-native-time-picker/documentation/getting-started/": {
+                        "position": [
+                            [
+                                81,
+                                7
+                            ]
+                        ]
+                    }
+                }
+            }
+        ],
+        [
+            "installation",
+            {
+                "_index": 30,
+                "title": {},
+                "text": {
+                    "/react-native-time-picker/documentation/getting-started/": {
+                        "position": [
+                            [
+                                16,
+                                12
+                            ]
+                        ]
+                    }
+                }
+            }
+        ],
+        [
+            "javascript",
+            {
+                "_index": 38,
+                "title": {},
+                "text": {
+                    "/react-native-time-picker/documentation/getting-started/": {
+                        "position": [
+                            [
+                                117,
+                                10
+                            ]
+                        ]
+                    }
+                }
+            }
+        ],
+        [
+            "links",
+            {
+                "_index": 21,
+                "title": {},
+                "text": {
+                    "/react-native-time-picker/": {
+                        "position": [
+                            [
+                                188,
+                                5
+                            ]
+                        ]
+                    }
+                }
+            }
+        ],
+        [
+            "native",
+            {
+                "_index": 1,
+                "title": {
+                    "/react-native-time-picker/": {
+                        "position": [
+                            [
+                                6,
+                                6
+                            ]
+                        ]
+                    }
+                },
+                "text": {
+                    "/react-native-time-picker/": {
+                        "position": [
+                            [
+                                7,
+                                6
+                            ],
+                            [
+                                241,
+                                6
+                            ]
+                        ]
+                    }
+                }
+            }
+        ],
+        [
+            "native.",
+            {
+                "_index": 11,
+                "title": {},
+                "text": {
+                    "/react-native-time-picker/": {
+                        "position": [
+                            [
+                                85,
+                                7
+                            ]
+                        ]
+                    }
+                }
+            }
+        ],
+        [
+            "npm",
+            {
+                "_index": 26,
+                "title": {},
+                "text": {
+                    "/react-native-time-picker/": {
+                        "position": [
+                            [
+                                260,
+                                3
+                            ]
+                        ]
+                    },
+                    "/react-native-time-picker/documentation/getting-started/": {
+                        "position": [
+                            [
+                                66,
+                                3
+                            ],
+                            [
+                                76,
+                                3
+                            ]
+                        ]
+                    }
+                }
+            }
+        ],
+        [
+            "period",
+            {
+                "_index": 16,
+                "title": {},
+                "text": {
+                    "/react-native-time-picker/": {
+                        "position": [
+                            [
+                                142,
+                                6
+                            ]
+                        ]
+                    }
+                }
+            }
+        ],
+        [
+            "picker",
+            {
+                "_index": 3,
+                "title": {
+                    "/react-native-time-picker/": {
+                        "position": [
+                            [
+                                18,
+                                6
+                            ]
+                        ]
+                    }
+                },
+                "text": {
+                    "/react-native-time-picker/": {
+                        "position": [
+                            [
+                                68,
+                                6
+                            ],
+                            [
+                                253,
+                                6
+                            ],
+                            [
+                                305,
+                                6
+                            ]
+                        ]
+                    },
+                    "/react-native-time-picker/documentation/getting-started/": {
+                        "position": [
+                            [
+                                59,
+                                6
+                            ],
+                            [
+                                98,
+                                6
+                            ]
+                        ]
+                    }
+                }
+            }
+        ],
+        [
+            "picker\"",
+            {
+                "_index": 42,
+                "title": {},
+                "text": {
+                    "/react-native-time-picker/documentation/getting-started/": {
+                        "position": [
+                            [
+                                163,
+                                7
+                            ]
+                        ]
+                    }
+                }
+            }
+        ],
+        [
+            "radius",
+            {
+                "_index": 53,
+                "title": {},
+                "text": {
+                    "/react-native-time-picker/documentation/getting-started/": {
+                        "position": [
+                            [
+                                254,
+                                6
+                            ]
+                        ]
+                    }
+                }
+            }
+        ],
+        [
+            "raut/react",
+            {
+                "_index": 25,
+                "title": {},
+                "text": {
+                    "/react-native-time-picker/": {
+                        "position": [
+                            [
+                                230,
+                                10
+                            ]
+                        ]
+                    }
+                }
+            }
+        ],
+        [
+            "react",
+            {
+                "_index": 0,
+                "title": {
+                    "/react-native-time-picker/": {
+                        "position": [
+                            [
+                                0,
+                                5
+                            ]
+                        ]
+                    }
+                },
+                "text": {
+                    "/react-native-time-picker/": {
+                        "position": [
+                            [
+                                0,
+                                5
+                            ],
+                            [
+                                79,
+                                5
+                            ]
+                        ]
+                    }
+                }
+            }
+        ],
+        [
+            "return",
+            {
+                "_index": 50,
+                "title": {},
+                "text": {
+                    "/react-native-time-picker/documentation/getting-started/": {
+                        "position": [
+                            [
+                                220,
+                                6
+                            ]
+                        ]
+                    }
+                }
+            }
+        ],
+        [
+            "rn",
+            {
+                "_index": 34,
+                "title": {},
+                "text": {
+                    "/react-native-time-picker/documentation/getting-started/": {
+                        "position": [
+                            [
+                                51,
+                                2
+                            ],
+                            [
+                                90,
+                                2
+                            ]
+                        ]
+                    }
+                }
+            }
+        ],
+        [
+            "selection.",
+            {
+                "_index": 20,
+                "title": {},
+                "text": {
+                    "/react-native-time-picker/": {
+                        "position": [
+                            [
+                                177,
+                                10
+                            ]
+                        ]
+                    }
+                }
+            }
+        ],
+        [
+            "setup",
+            {
+                "_index": 37,
+                "title": {},
+                "text": {
+                    "/react-native-time-picker/documentation/getting-started/": {
+                        "position": [
+                            [
+                                111,
+                                5
+                            ]
+                        ]
+                    }
+                }
+            }
+        ],
+        [
+            "shell",
+            {
+                "_index": 32,
+                "title": {},
+                "text": {
+                    "/react-native-time-picker/documentation/getting-started/": {
+                        "position": [
+                            [
+                                34,
+                                5
+                            ],
+                            [
+                                70,
+                                5
+                            ]
+                        ]
+                    }
+                }
+            }
+        ],
+        [
+            "started",
+            {
+                "_index": 29,
+                "title": {
+                    "/react-native-time-picker/documentation/getting-started/": {
+                        "position": [
+                            [
+                                8,
+                                7
+                            ]
+                        ]
+                    }
+                },
+                "text": {
+                    "/react-native-time-picker/documentation/getting-started/": {
+                        "position": [
+                            [
+                                8,
+                                7
+                            ]
+                        ]
+                    }
+                }
+            }
+        ],
+        [
+            "support.",
+            {
+                "_index": 17,
+                "title": {},
+                "text": {
+                    "/react-native-time-picker/": {
+                        "position": [
+                            [
+                                149,
+                                8
+                            ]
+                        ]
+                    }
+                }
+            }
+        ],
+        [
+            "time",
+            {
+                "_index": 2,
+                "title": {
+                    "/react-native-time-picker/": {
+                        "position": [
+                            [
+                                13,
+                                4
+                            ]
+                        ]
+                    }
+                },
+                "text": {
+                    "/react-native-time-picker/": {
+                        "position": [
+                            [
+                                63,
+                                4
+                            ],
+                            [
+                                172,
+                                4
+                            ],
+                            [
+                                248,
+                                4
+                            ],
+                            [
+                                300,
+                                4
+                            ]
+                        ]
+                    },
+                    "/react-native-time-picker/documentation/getting-started/": {
+                        "position": [
+                            [
+                                54,
+                                4
+                            ],
+                            [
+                                93,
+                                4
+                            ],
+                            [
+                                158,
+                                4
+                            ]
+                        ]
+                    }
+                }
+            }
+        ],
+        [
+            "timepicker",
+            {
+                "_index": 4,
+                "title": {},
+                "text": {
+                    "/react-native-time-picker/": {
+                        "position": [
+                            [
+                                14,
+                                10
+                            ]
+                        ]
+                    },
+                    "/react-native-time-picker/documentation/getting-started/": {
+                        "position": [
+                            [
+                                136,
+                                10
+                            ],
+                            [
+                                242,
+                                10
+                            ]
+                        ]
+                    }
+                }
+            }
+        ],
+        [
+            "visually",
+            {
+                "_index": 8,
+                "title": {},
+                "text": {
+                    "/react-native-time-picker/": {
+                        "position": [
+                            [
+                                44,
+                                8
+                            ]
+                        ]
+                    }
+                }
+            }
+        ],
+        [
+            "yarn",
+            {
+                "_index": 31,
+                "title": {},
+                "text": {
+                    "/react-native-time-picker/documentation/getting-started/": {
+                        "position": [
+                            [
+                                29,
+                                4
+                            ],
+                            [
+                                40,
+                                4
+                            ]
+                        ]
+                    }
+                }
+            }
+        ],
+        [
+            "{",
+            {
+                "_index": 49,
+                "title": {},
+                "text": {
+                    "/react-native-time-picker/documentation/getting-started/": {
+                        "position": [
+                            [
+                                212,
+                                1
+                            ]
+                        ]
+                    }
+                }
+            }
+        ],
+        [
+            "}",
+            {
+                "_index": 56,
+                "title": {},
+                "text": {
+                    "/react-native-time-picker/documentation/getting-started/": {
+                        "position": [
+                            [
+                                268,
+                                1
+                            ],
+                            [
+                                285,
+                                1
+                            ]
+                        ]
+                    }
+                }
+            }
+        ]
+    ],
+    "pipeline": []
+}

@@ -1,0 +1,10 @@
+{
+    "/react-native-time-picker/": {
+        "title": "React native time picker",
+        "text": "React  Native TimePicker A customizable and visually appealing time picker for React Native. Examples Features Customizable components. AM/PM period support. Drag-and-drop time selection. Links Github :  https://github.com/Anurag-Raut/react-native-time-picker NPM :  https://www.npmjs.com/package/rn-time-picker"
+    },
+    "/react-native-time-picker/documentation/getting-started/": {
+        "title": "Getting Started",
+        "text": "Getting Started Installation yarn Shell yarn  add  rn-time-picker npm Shell npm  install  rn-time-picker Basic setup JavaScript import  TimePicker  from  \"rn-time-picker\" ; \n \n export  default  function  App ()  { \n     return  ( \n         < TimePicker  radius ={ 120 }  /> \n     ); \n }"
+    }
+}
