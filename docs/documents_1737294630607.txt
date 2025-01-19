@@ -1,0 +1,6 @@
+{
+    "/": {
+        "title": "React native time picker",
+        "text": "React  Native TimePicker A customizable and visually appealing time picker for React Native. Features Customizable components. AM/PM period support. Drag-and-drop time selection."
+    }
+}
