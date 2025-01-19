@@ -6,7 +6,7 @@
     ],
     "fieldVectors": [
         [
-            "title//",
+            "title//react-native-time-picker/",
             [
                 0,
                 0.182,
@@ -19,7 +19,7 @@
             ]
         ],
         [
-            "text//",
+            "text//react-native-time-picker/",
             [
                 0,
                 0.251,
@@ -71,7 +71,7 @@
                 "_index": 5,
                 "title": {},
                 "text": {
-                    "/": {
+                    "/react-native-time-picker/": {
                         "position": [
                             [
                                 25,
@@ -88,7 +88,7 @@
                 "_index": 14,
                 "title": {},
                 "text": {
-                    "/": {
+                    "/react-native-time-picker/": {
                         "position": [
                             [
                                 127,
@@ -105,7 +105,7 @@
                 "_index": 7,
                 "title": {},
                 "text": {
-                    "/": {
+                    "/react-native-time-picker/": {
                         "position": [
                             [
                                 40,
@@ -126,7 +126,7 @@
                 "_index": 9,
                 "title": {},
                 "text": {
-                    "/": {
+                    "/react-native-time-picker/": {
                         "position": [
                             [
                                 53,
@@ -143,7 +143,7 @@
                 "_index": 13,
                 "title": {},
                 "text": {
-                    "/": {
+                    "/react-native-time-picker/": {
                         "position": [
                             [
                                 115,
@@ -160,7 +160,7 @@
                 "_index": 6,
                 "title": {},
                 "text": {
-                    "/": {
+                    "/react-native-time-picker/": {
                         "position": [
                             [
                                 27,
@@ -181,7 +181,7 @@
                 "_index": 17,
                 "title": {},
                 "text": {
-                    "/": {
+                    "/react-native-time-picker/": {
                         "position": [
                             [
                                 149,
@@ -198,7 +198,7 @@
                 "_index": 18,
                 "title": {},
                 "text": {
-                    "/": {
+                    "/react-native-time-picker/": {
                         "position": [
                             [
                                 158,
@@ -215,7 +215,7 @@
                 "_index": 12,
                 "title": {},
                 "text": {
-                    "/": {
+                    "/react-native-time-picker/": {
                         "position": [
                             [
                                 93,
@@ -232,7 +232,7 @@
                 "_index": 10,
                 "title": {},
                 "text": {
-                    "/": {
+                    "/react-native-time-picker/": {
                         "position": [
                             [
                                 75,
@@ -248,7 +248,7 @@
             {
                 "_index": 1,
                 "title": {
-                    "/": {
+                    "/react-native-time-picker/": {
                         "position": [
                             [
                                 6,
@@ -258,7 +258,7 @@
                     }
                 },
                 "text": {
-                    "/": {
+                    "/react-native-time-picker/": {
                         "position": [
                             [
                                 7,
@@ -275,7 +275,7 @@
                 "_index": 11,
                 "title": {},
                 "text": {
-                    "/": {
+                    "/react-native-time-picker/": {
                         "position": [
                             [
                                 85,
@@ -292,7 +292,7 @@
                 "_index": 15,
                 "title": {},
                 "text": {
-                    "/": {
+                    "/react-native-time-picker/": {
                         "position": [
                             [
                                 133,
@@ -308,7 +308,7 @@
             {
                 "_index": 3,
                 "title": {
-                    "/": {
+                    "/react-native-time-picker/": {
                         "position": [
                             [
                                 18,
@@ -318,7 +318,7 @@
                     }
                 },
                 "text": {
-                    "/": {
+                    "/react-native-time-picker/": {
                         "position": [
                             [
                                 68,
@@ -334,7 +334,7 @@
             {
                 "_index": 0,
                 "title": {
-                    "/": {
+                    "/react-native-time-picker/": {
                         "position": [
                             [
                                 0,
@@ -344,7 +344,7 @@
                     }
                 },
                 "text": {
-                    "/": {
+                    "/react-native-time-picker/": {
                         "position": [
                             [
                                 0,
@@ -365,7 +365,7 @@
                 "_index": 19,
                 "title": {},
                 "text": {
-                    "/": {
+                    "/react-native-time-picker/": {
                         "position": [
                             [
                                 168,
@@ -382,7 +382,7 @@
                 "_index": 16,
                 "title": {},
                 "text": {
-                    "/": {
+                    "/react-native-time-picker/": {
                         "position": [
                             [
                                 140,
@@ -398,7 +398,7 @@
             {
                 "_index": 2,
                 "title": {
-                    "/": {
+                    "/react-native-time-picker/": {
                         "position": [
                             [
                                 13,
@@ -408,7 +408,7 @@
                     }
                 },
                 "text": {
-                    "/": {
+                    "/react-native-time-picker/": {
                         "position": [
                             [
                                 63,
@@ -429,7 +429,7 @@
                 "_index": 4,
                 "title": {},
                 "text": {
-                    "/": {
+                    "/react-native-time-picker/": {
                         "position": [
                             [
                                 14,
@@ -446,7 +446,7 @@
                 "_index": 8,
                 "title": {},
                 "text": {
-                    "/": {
+                    "/react-native-time-picker/": {
                         "position": [
                             [
                                 44,

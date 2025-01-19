@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://react-native-time-picker/sitemap_index.xml
+Sitemap: https://anurag-raut.github.io/react-native-time-picker/sitemap_index.xml
