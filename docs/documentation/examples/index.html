@@ -1,0 +1,927 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>
+        Examples - React Native Time Picker
+    </title>
+    <meta name="theme-color" content="#ffffff">
+    <meta name="description" content="Examples"/>
+    <link rel="icon" type="image/svg+xml" href="https://anurag-raut.github.io"/>
+    <link rel="icon" type="image/png" sizes="32x32" href="https://anurag-raut.github.io">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://anurag-raut.github.io">    
+        
+    <meta property="og:image" content="https://anurag-raut.github.io"/>
+    <meta property="og:url" content="https://anurag-raut.github.io/react-native-time-picker/documentation/examples/">
+    <meta property="og:title" content="Examples - React Native Time Picker" />
+    <meta property="og:type" content="website" />
+    <meta property="og:description" content="Examples"/>
+    
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:site" content=""/>
+    <meta name="twitter:title" content="Examples - React Native Time Picker" />
+    <meta name="twitter:description" content="Examples" />
+    <meta name="twitter:image" content="https://anurag-raut.github.io"/>
+
+    <link rel="canonical" href="https://anurag-raut.github.io/react-native-time-picker/documentation/examples/">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin=""/>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&subset=latin&display=swap"
+          rel="stylesheet"/>
+    
+    <link rel="preload" href="https://anurag-raut.github.io/react-native-time-picker/_lib/index.css" as="style">
+    <link rel="stylesheet" href="https://anurag-raut.github.io/react-native-time-picker/_lib/index.css"/>
+    <style>
+        :root {
+            color-scheme: light dark;
+        }
+        html {
+            scroll-padding-top: 120px;
+            visibility: hidden;
+            opacity: 0;
+        }
+    </style>
+    <script>
+        function getInitialTheme() {
+            const savedTheme = localStorage.getItem('theme') || 'system';
+            if (savedTheme === 'light' || savedTheme === 'dark') return savedTheme;
+            return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        }
+        const theme = getInitialTheme();
+        document.documentElement.classList.add('theme-' + theme);
+    </script>
+    
+</head>
+<body>
+
+<div id="root">
+    <sl-drawer id="menu-drawer" label="Documentation" class="drawer__control" placement="top">
+        <div class="body__drawer">
+            <div class="items">
+                
+                    
+                        <sl-button 
+                            class="nav_button  current " 
+                            size="medium" 
+                            href="/react-native-time-picker/"
+                        >
+                            Documentation
+                        </sl-button>
+                         
+                
+            </div>
+            <sl-divider class="divider__drawer"></sl-divider>
+            <nav class="tree">
+                <div class="scroll-panel">
+                    
+                        
+                            
+                            
+                            
+                                <sl-tree class="tree__with_lines" selection="leaf">
+                                    
+                                
+                                    
+                                        <sl-tree-item 
+                                            id="tRe9BsFE8c7KIr-dr3eH3" 
+                                            style="--indent-level: 0"
+                                            
+                                            class="leaf"
+                                        >
+                                            <a href="/react-native-time-picker/">React native time picker</a>
+                                        </sl-tree-item>                                        
+                                    
+                                
+                                    
+                                        <sl-tree-item 
+                                            id="WoFsxjH6ooOR3ZG4Dgteh" 
+                                            style="--indent-level: 0"
+                                            
+                                            class="leaf"
+                                        >
+                                            <a href="/react-native-time-picker/documentation/getting-started/">Getting Started</a>
+                                        </sl-tree-item>                                        
+                                    
+                                
+                                    
+                                        <sl-tree-item 
+                                            id="Ipafy6epybKJ7p1eG0UPt" 
+                                            style="--indent-level: 0"
+                                            
+                                            class="leaf"
+                                        >
+                                            <a href="/react-native-time-picker/documentation/props/">Props</a>
+                                        </sl-tree-item>                                        
+                                    
+                                
+                                    
+                                        <sl-tree-item 
+                                            id="8xJHXbZR4IdDoXjLuS4pD" 
+                                            style="--indent-level: 0"
+                                            
+                                            class="leaf"
+                                        >
+                                            <a href="/react-native-time-picker/documentation/customization/">Customization</a>
+                                        </sl-tree-item>                                        
+                                    
+                                
+                                    
+                                        <sl-tree-item 
+                                            id="EkkD_KUJe56qyNWQF-5Q2" 
+                                            style="--indent-level: 0"
+                                             selected 
+                                            class="leaf"
+                                        >
+                                            <a href="/react-native-time-picker/documentation/examples/">Examples</a>
+                                        </sl-tree-item>                                        
+                                    
+                                
+                            
+                                </sl-tree>
+                            
+                        
+                        
+                </div>
+            </nav>
+        </div>
+    </sl-drawer>
+
+    <div class="body__wrapper">
+        <div class="nav__container">
+            <nav>
+                <div class="border-box"></div>
+                <div class="logo">
+                    
+                        <div class="icon">
+                            <?xml version="1.0" encoding="iso-8859-1"?>
+<!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
+<svg fill="#000000" height="800px" width="800px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
+	 viewBox="0 0 421.66 421.66" xml:space="preserve">
+<g>
+	<g>
+		<path d="M86.557,278.614l-14.505,7.875c0.691,1.275,1.403,2.545,2.12,3.794c0.727,1.265,1.469,2.509,2.232,3.748l14.049-8.653
+			c-0.676-1.101-1.341-2.222-1.992-3.343C87.817,280.902,87.182,279.761,86.557,278.614z"/>
+		<path d="M140.236,88.81c1.126-0.65,2.263-1.285,3.41-1.91l-7.875-14.505c-1.275,0.691-2.539,1.398-3.789,2.12
+			c-1.265,0.727-2.509,1.475-3.743,2.232l8.653,14.049C137.993,90.121,139.114,89.455,140.236,88.81z"/>
+		<path d="M335.364,143.994l14.505-7.875c-0.691-1.275-1.403-2.545-2.12-3.794c-0.727-1.265-1.475-2.509-2.232-3.748l-14.049,8.653
+			c0.676,1.101,1.341,2.222,1.992,3.343C334.104,141.705,334.739,142.842,335.364,143.994z"/>
+		<path d="M210.958,69.856c1.295,0,2.601,0.02,3.907,0.056l0.435-16.502c-1.449-0.036-2.903-0.056-4.342-0.056
+			c-1.459,0-2.908,0.02-4.362,0.061l0.466,16.497C208.357,69.871,209.663,69.856,210.958,69.856z"/>
+		<path d="M74.172,132.33c-0.727,1.265-1.439,2.529-2.13,3.804l14.52,7.844c0.614-1.137,1.254-2.273,1.9-3.395
+			c0.65-1.126,1.321-2.243,2.002-3.359l-14.07-8.627C75.637,129.832,74.894,131.076,74.172,132.33z"/>
+		<path d="M285.039,90.807l8.627-14.07c-1.239-0.758-2.483-1.5-3.732-2.222c-1.265-0.727-2.529-1.439-3.804-2.13l-7.844,14.52
+			c1.137,0.614,2.273,1.254,3.4,1.9C282.807,89.455,283.928,90.126,285.039,90.807z"/>
+		<path d="M53.068,206.959c-0.036,1.449-0.056,2.903-0.056,4.342c0,1.459,0.021,2.908,0.061,4.357l16.497-0.466
+			c-0.036-1.29-0.051-2.596-0.051-3.891s0.021-2.601,0.056-3.907L53.068,206.959z"/>
+		<path d="M368.849,206.944l-16.497,0.466c0.036,1.29,0.051,2.596,0.051,3.891s-0.02,2.601-0.056,3.907l16.502,0.435
+			c0.036-1.449,0.056-2.903,0.056-4.342C368.91,209.842,368.89,208.393,368.849,206.944z"/>
+		<path d="M333.454,282.024c-0.65,1.126-1.321,2.243-2.002,3.359l14.07,8.627c0.758-1.239,1.5-2.483,2.222-3.732
+			c0.727-1.265,1.439-2.529,2.13-3.804l-14.52-7.844C334.744,279.761,334.104,280.902,333.454,282.024z"/>
+		<path d="M136.882,331.795l-8.627,14.07c1.239,0.758,2.483,1.5,3.732,2.222c1.265,0.727,2.529,1.439,3.804,2.13l7.844-14.52
+			c-1.137-0.614-2.273-1.254-3.395-1.9C139.114,333.147,137.993,332.481,136.882,331.795z"/>
+		<path d="M359.909,61.751c-82.335-82.335-215.823-82.335-298.158,0s-82.335,215.823,0,298.158s215.823,82.335,298.158,0
+			S442.244,144.086,359.909,61.751z M340.422,340.422c-71.572,71.572-187.612,71.572-259.185,0s-71.573-187.612,0-259.185
+			s187.612-71.573,259.185,0S411.99,268.85,340.422,340.422z"/>
+		<path d="M210.958,352.746c-1.295,0-2.601-0.02-3.907-0.056l-0.435,16.502c1.449,0.041,2.903,0.056,4.342,0.056
+			c1.459,0,2.908-0.02,4.362-0.061l-0.466-16.497C213.564,352.731,212.259,352.746,210.958,352.746z"/>
+		<path d="M281.686,333.797c-1.126,0.65-2.263,1.285-3.41,1.91l7.875,14.505c1.275-0.691,2.54-1.398,3.789-2.12
+			c1.265-0.727,2.509-1.475,3.743-2.232l-8.653-14.049C283.928,332.481,282.807,333.147,281.686,333.797z"/>
+		<path d="M219.084,181.882V78.934c0-4.557-3.692-8.253-8.253-8.253s-8.253,3.697-8.253,8.253v102.948
+			c-6.154,1.756-11.464,5.371-15.34,10.25l-80.154-20.163c-6.625-1.674-13.353,2.355-15.027,8.98
+			c-1.669,6.63,2.36,13.358,8.986,15.022l80.092,20.152c2.514,14.162,14.812,24.94,29.696,24.94
+			c16.696,0,30.234-13.537,30.234-30.234C241.064,197.016,231.74,185.491,219.084,181.882z M210.83,226.728
+			c-8.781,0-15.898-7.117-15.898-15.898s7.117-15.898,15.898-15.898s15.898,7.117,15.898,15.898S219.611,226.728,210.83,226.728z"/>
+	</g>
+</g>
+</svg>
+                        </div>
+                    
+                    <div>
+                        
+                            <a href="https://github.com/Anurag-Raut/react-native-time-picker/"><span class="line-clamp-1">React Native Time Picker</span></a>
+                        
+                    </div>
+                </div>
+                <div class="items">
+                    <div class="container">
+                        
+                            
+                                <sl-button 
+                                    class="nav_button  current " 
+                                    size="medium" 
+                                    href="/react-native-time-picker/"
+                                >
+                                    Documentation
+                                </sl-button>
+                                                    
+                        
+                    </div>
+                </div>
+                <div class="search">
+                    <div>
+                        <sl-button id="search-button" class="search_button">
+                            <sl-icon slot="prefix" name="search"></sl-icon>
+                            Search
+                            <div slot="suffix">
+                                <div class="button__prefix-wrapper">
+                                    <div class="button__prefix-container">
+                                        <sl-icon name="command"></sl-icon>
+                                        <span class="font-w-semibold">K</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </sl-button>
+                    </div>
+                    <div>
+                        <sl-dropdown id="theme-selector" hoist>
+                            <sl-button slot="trigger" class="nav_button">
+                                <sl-icon id="theme-selector-icon" slot="prefix" name="sun"></sl-icon>
+                            </sl-button>
+                            <sl-menu id="theme-selector-menu">
+                                <sl-menu-item type="checkbox" value="light">Light</sl-menu-item>
+                                <sl-menu-item type="checkbox" value="dark">Dark</sl-menu-item>
+                                <sl-menu-item type="checkbox" value="system">System</sl-menu-item>
+                            </sl-menu>
+                        </sl-dropdown>
+                    </div>
+                    <div class="menu">
+                        <sl-button id="menu-open-trigger" class="nav_button" outline>
+                            <sl-icon slot="prefix" name="list"></sl-icon>
+                        </sl-button>
+                    </div>
+                </div>
+            </nav>    
+        </div>
+        <div class="content__container">
+            <aside class="tree">
+                <nav id="nav-tree" class="tree">
+                    
+                        
+                            
+                            
+                            
+                                <sl-tree class="tree__with_lines" selection="leaf">
+                                    
+                                
+                                    
+                                        <sl-tree-item 
+                                            id="tRe9BsFE8c7KIr-dr3eH3" 
+                                            style="--indent-level: 0"
+                                            
+                                            class="leaf"
+                                        >
+                                            <a href="/react-native-time-picker/">React native time picker</a>
+                                        </sl-tree-item>                                        
+                                    
+                                
+                                    
+                                        <sl-tree-item 
+                                            id="WoFsxjH6ooOR3ZG4Dgteh" 
+                                            style="--indent-level: 0"
+                                            
+                                            class="leaf"
+                                        >
+                                            <a href="/react-native-time-picker/documentation/getting-started/">Getting Started</a>
+                                        </sl-tree-item>                                        
+                                    
+                                
+                                    
+                                        <sl-tree-item 
+                                            id="Ipafy6epybKJ7p1eG0UPt" 
+                                            style="--indent-level: 0"
+                                            
+                                            class="leaf"
+                                        >
+                                            <a href="/react-native-time-picker/documentation/props/">Props</a>
+                                        </sl-tree-item>                                        
+                                    
+                                
+                                    
+                                        <sl-tree-item 
+                                            id="8xJHXbZR4IdDoXjLuS4pD" 
+                                            style="--indent-level: 0"
+                                            
+                                            class="leaf"
+                                        >
+                                            <a href="/react-native-time-picker/documentation/customization/">Customization</a>
+                                        </sl-tree-item>                                        
+                                    
+                                
+                                    
+                                        <sl-tree-item 
+                                            id="EkkD_KUJe56qyNWQF-5Q2" 
+                                            style="--indent-level: 0"
+                                             selected 
+                                            class="leaf"
+                                        >
+                                            <a href="/react-native-time-picker/documentation/examples/">Examples</a>
+                                        </sl-tree-item>                                        
+                                    
+                                
+                            
+                                </sl-tree>
+                            
+                        
+                        
+                </nav>
+                <nav id="white-label-container" class="menu">
+                    <a class="white-label" href="https://tiledocs.com" target="_blank">
+                        <div class="card-container">
+                            <div class="icon-section">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+                                    <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
+                                    <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5z"/>
+                                </svg>
+                            </div>
+                            <div class="title-section">
+                                <sl-tooltip hoist style="--max-width: 30ch;" placement="top-start" content="This documentation site was created using TileDocs, a fast and user-friendly editor for building and hosting documentation projects.">
+                                    <span>Made with TileDocs</span>
+                                <sl-tooltip>
+                            </div>
+                        </div>
+                    </a>
+                </nav>
+            </aside>
+            
+            <article>
+                <main>
+                    <div class="content">
+                        <h1 id="examples" dir="ltr"><span style="white-space: pre-wrap;">Examples</span></h1><h2 id="basic-example" dir="ltr"><span style="white-space: pre-wrap;">Basic Example</span></h2><div class="code-block"><div class="toolbar-cell"><div class="language-title">TypeScript</div><div><sl-copy-button value="import TimePicker from &quot;rn-time-picker&quot;
+
+export default function BasicTimePickerExample(){
+    return (
+        <TimePicker
+        radius={120}
+        numberRadius={100}
+        customStyles={{
+          container: {
+            backgroundColor: &quot;gray&quot;,
+            padding: 12,
+            borderRadius: 10
+          },
+          clock: {
+            backgroundColor: &quot;#1A1A1D&quot;
+          }
+        }}
+        colors={{ clockActiveColor: &quot;#6A1E55&quot;, topActiveColor: &quot;rgba(166, 77, 121,0.7)&quot;, topActiveTextColor: &quot;white&quot;, }} />
+
+     
+    )
+}" copy-label="Copy to clipboard" success-label="The code is copied to clipboard"></sl-copy-button></div></div><div class="code-cell" style="height: 578.4px;"><div class="container"><pre class="shiki shiki-themes" style="background-color:#f1f5f9;--shiki-dark-bg:#0d1117;color:#1f2328;--shiki-dark:#e6edf3" tabindex="0"><code class="code-view"><span class="line" data-line="1"><span style="color:#953800;--shiki-dark:#FFA657">import</span><span style="color:#0A3069;--shiki-dark:#A5D6FF"> TimePicker</span><span style="color:#0A3069;--shiki-dark:#A5D6FF"> from</span><span style="color:#0A3069;--shiki-dark:#A5D6FF"> "rn-time-picker"</span></span>
+<span class="line" data-line="2"></span>
+<span class="line" data-line="3"><span style="color:#CF222E;--shiki-dark:#FF7B72">export</span><span style="color:#1F2328;--shiki-dark:#E6EDF3"> default function BasicTimePickerExample(){</span></span>
+<span class="line" data-line="4"><span style="color:#CF222E;--shiki-dark:#FF7B72">    return</span><span style="color:#1F2328;--shiki-dark:#E6EDF3"> (</span></span>
+<span class="line" data-line="5"><span style="color:#CF222E;--shiki-dark:#FF7B72">        &lt;</span><span style="color:#953800;--shiki-dark:#FFA657">TimePicker</span></span>
+<span class="line" data-line="6"><span style="color:#1F2328;--shiki-dark:#E6EDF3">        radius</span><span style="color:#CF222E;--shiki-dark:#FF7B72">=</span><span style="color:#1F2328;--shiki-dark:#E6EDF3">{</span><span style="color:#953800;--shiki-dark:#FFA657">120}</span></span>
+<span class="line" data-line="7"><span style="color:#1F2328;--shiki-dark:#E6EDF3">        numberRadius</span><span style="color:#CF222E;--shiki-dark:#FF7B72">=</span><span style="color:#1F2328;--shiki-dark:#E6EDF3">{</span><span style="color:#953800;--shiki-dark:#FFA657">100}</span></span>
+<span class="line" data-line="8"><span style="color:#1F2328;--shiki-dark:#E6EDF3">        customStyles</span><span style="color:#CF222E;--shiki-dark:#FF7B72">=</span><span style="color:#1F2328;--shiki-dark:#E6EDF3">{{</span></span>
+<span class="line" data-line="9"><span style="color:#953800;--shiki-dark:#FFA657">          container:</span><span style="color:#0A3069;--shiki-dark:#A5D6FF"> {</span></span>
+<span class="line" data-line="10"><span style="color:#953800;--shiki-dark:#FFA657">            backgroundColor:</span><span style="color:#0A3069;--shiki-dark:#A5D6FF"> "gray",</span></span>
+<span class="line" data-line="11"><span style="color:#953800;--shiki-dark:#FFA657">            padding:</span><span style="color:#0A3069;--shiki-dark:#A5D6FF"> 12,</span></span>
+<span class="line" data-line="12"><span style="color:#953800;--shiki-dark:#FFA657">            borderRadius:</span><span style="color:#0550AE;--shiki-dark:#79C0FF"> 10</span></span>
+<span class="line" data-line="13"><span style="color:#1F2328;--shiki-dark:#E6EDF3">          },</span></span>
+<span class="line" data-line="14"><span style="color:#953800;--shiki-dark:#FFA657">          clock:</span><span style="color:#0A3069;--shiki-dark:#A5D6FF"> {</span></span>
+<span class="line" data-line="15"><span style="color:#953800;--shiki-dark:#FFA657">            backgroundColor:</span><span style="color:#0A3069;--shiki-dark:#A5D6FF"> "#1A1A1D"</span></span>
+<span class="line" data-line="16"><span style="color:#1F2328;--shiki-dark:#E6EDF3">          }</span></span>
+<span class="line" data-line="17"><span style="color:#1F2328;--shiki-dark:#E6EDF3">        }}</span></span>
+<span class="line" data-line="18"><span style="color:#1F2328;--shiki-dark:#E6EDF3">        colors</span><span style="color:#CF222E;--shiki-dark:#FF7B72">=</span><span style="color:#1F2328;--shiki-dark:#E6EDF3">{{ clockActiveColor: "#6A1E55", topActiveColor: "rgba(166, 77, 121,0.7)", topActiveTextColor: "white", }} /&gt;</span></span>
+<span class="line" data-line="19"></span>
+<span class="line" data-line="20"><span style="color:#1F2328;--shiki-dark:#E6EDF3">     </span></span>
+<span class="line" data-line="21"><span style="color:#1F2328;--shiki-dark:#E6EDF3">    )</span></span>
+<span class="line" data-line="22"><span style="color:#1F2328;--shiki-dark:#E6EDF3">}</span></span></code></pre></div></div></div><h2 id="example-with-custom-components" dir="ltr"><span style="white-space: pre-wrap;">Example with custom components</span></h2><div class="code-block"><div class="toolbar-cell"><div class="language-title">TypeScript</div><div><sl-copy-button value="import { StyleSheet, Text, TouchableHighlight, View, TextStyle, ViewStyle } from 'react-native';
+import TimePicker, { Mode } from &quot;rn-time-picker&quot;;
+
+interface NumberComponentProps {
+  value: number;
+  isActive: boolean;
+}
+
+interface TopComponentProps {
+  hour: number;
+  minute: number;
+  switchMode: (mode: Mode) => void;
+  activeMode: Mode;
+  period: &quot;am&quot; | &quot;pm&quot;;
+  setPeriod: (period: &quot;am&quot; | &quot;pm&quot;) => void;
+}
+
+interface StyleTypes {
+  container: ViewStyle;
+  timePickerContainer: ViewStyle;
+  timePickerClock: ViewStyle;
+  activeNumber: TextStyle;
+  inActiveNumber: TextStyle;
+  numberComponent: TextStyle;
+  activeNumberComponent: ViewStyle;
+  timeText: TextStyle;
+  activeTimeText: ViewStyle;
+  amPmContainer: ViewStyle;
+  periodContainer: ViewStyle;
+  activePeriodAM: ViewStyle;
+  activePeriodPM: ViewStyle;
+  amPmText: TextStyle;
+  activePeriodText: TextStyle;
+}
+
+export default function CustomizedTimePickerExample(): JSX.Element {
+  const NumberComponent = ({ value, isActive }: NumberComponentProps): JSX.Element => (
+    <Text style={[
+      styles.numberComponent,
+      isActive &amp;&amp; styles.activeNumberComponent
+    ]}>
+      {value}
+    </Text>
+  );
+
+  const TopComponent = ({
+    hour,
+    minute,
+    switchMode,
+    activeMode,
+    period,
+    setPeriod
+  }: TopComponentProps): JSX.Element => {
+    return (
+      <View style={styles.container}>
+        <Text
+          style={[
+            styles.timeText,
+            activeMode === Mode.HOUR &amp;&amp; styles.activeTimeText
+          ]}
+          onPress={() => switchMode(Mode.HOUR)}
+        >
+          {hour.toString().padStart(2, &quot;0&quot;)}
+        </Text>
+
+        <Text
+          style={[
+            styles.timeText,
+            activeMode === Mode.MINUTE &amp;&amp; styles.activeTimeText
+          ]}
+          onPress={() => switchMode(Mode.MINUTE)}
+        >
+          {minute.toString().padStart(2, &quot;0&quot;)}
+        </Text>
+
+        <TouchableHighlight
+          onPress={() => setPeriod(period === &quot;am&quot; ? &quot;pm&quot; : &quot;am&quot;)}
+          style={styles.amPmContainer}
+        >
+          <>
+            <View
+              style={[
+                styles.periodContainer,
+                period === &quot;am&quot; &amp;&amp; styles.activePeriodAM
+              ]}
+            >
+              <Text
+                style={[
+                  styles.amPmText,
+                  period === &quot;am&quot; &amp;&amp; styles.activePeriodText
+                ]}
+              >
+                AM
+              </Text>
+            </View>
+
+            <View
+              style={[
+                styles.periodContainer,
+                period === &quot;pm&quot; &amp;&amp; styles.activePeriodPM
+              ]}
+            >
+              <Text
+                style={[
+                  styles.amPmText,
+                  period === &quot;pm&quot; &amp;&amp; styles.activePeriodText
+                ]}
+              >
+                PM
+              </Text>
+            </View>
+          </>
+        </TouchableHighlight>
+      </View>
+    );
+  };
+
+  return (
+    <TimePicker
+      radius={140}
+      numberRadius={110}
+      customComponents={{
+        NumberComponent,
+        TopComponent
+      }}
+      customStyles={{
+        container: styles.timePickerContainer,
+        clock: styles.timePickerClock,
+        activeNumber: styles.activeNumber,
+        inActiveNumber: styles.inActiveNumber
+      }}
+      colors={{
+        clockActiveColor: &quot;#FF6500&quot;,
+        topActiveColor: &quot;#0B192C&quot;,
+        topActiveTextColor: &quot;white&quot;,
+        topInActiveTextColor: &quot;black&quot;
+      }}
+    />
+  );
+}
+
+const styles = StyleSheet.create<StyleTypes>({
+  container: {
+    flexDirection: &quot;row&quot;,
+    gap: 12,
+  },
+  timePickerContainer: {
+    backgroundColor: &quot;gray&quot;,
+    padding: 12,
+    borderRadius: 10
+  },
+  timePickerClock: {
+    backgroundColor: &quot;#1E3E62&quot;
+  },
+  activeNumber: {
+    fontSize: 19,
+    width: 40,
+    height: 40
+  },
+  inActiveNumber: {
+    fontSize: 19,
+    width: 40,
+    height: 40
+  },
+  numberComponent: {
+    height: 55,
+    width: 55,
+    borderRadius: 100,
+    zIndex: 10,
+    textAlignVertical: &quot;center&quot;,
+    textAlign: &quot;center&quot;,
+    fontWeight: &quot;600&quot;,
+    fontSize: 20,
+    color: &quot;white&quot;
+  },
+  activeNumberComponent: {
+    backgroundColor: &quot;#FF6500&quot;
+  },
+  timeText: {
+    fontSize: 18,
+    fontWeight: &quot;600&quot;,
+    backgroundColor: &quot;rgba(30, 62, 98,0.7)&quot;,
+    padding: 12,
+    borderRadius: 12,
+    color: &quot;white&quot;
+  },
+  activeTimeText: {
+    backgroundColor: &quot;#FF6500&quot;
+  },
+  amPmContainer: {
+    flexDirection: &quot;column&quot;,
+    borderColor: &quot;black&quot;,
+    borderWidth: 1,
+  },
+  periodContainer: {
+    padding: 4,
+    borderRadius: 8,
+    justifyContent: &quot;center&quot;,
+    alignItems: &quot;center&quot;,
+  },
+  activePeriodAM: {
+    backgroundColor: &quot;#32CD32&quot;
+  },
+  activePeriodPM: {
+    backgroundColor: &quot;#FFD700&quot;
+  },
+  amPmText: {
+    fontSize: 12,
+    fontWeight: &quot;600&quot;,
+  },
+  activePeriodText: {
+    color: &quot;#FFFFFF&quot;
+  }
+});" copy-label="Copy to clipboard" success-label="The code is copied to clipboard"></sl-copy-button></div></div><div class="code-cell" style="height: 5416.8px;"><div class="container"><pre class="shiki shiki-themes" style="background-color:#f1f5f9;--shiki-dark-bg:#0d1117;color:#1f2328;--shiki-dark:#e6edf3" tabindex="0"><code class="code-view"><span class="line" data-line="1"><span style="color:#CF222E;--shiki-dark:#FF7B72">import</span><span style="color:#1F2328;--shiki-dark:#E6EDF3"> { StyleSheet, Text, TouchableHighlight, View, TextStyle, ViewStyle } </span><span style="color:#CF222E;--shiki-dark:#FF7B72">from</span><span style="color:#0A3069;--shiki-dark:#A5D6FF"> 'react-native'</span><span style="color:#1F2328;--shiki-dark:#E6EDF3">;</span></span>
+<span class="line" data-line="2"><span style="color:#CF222E;--shiki-dark:#FF7B72">import</span><span style="color:#1F2328;--shiki-dark:#E6EDF3"> TimePicker, { Mode } </span><span style="color:#CF222E;--shiki-dark:#FF7B72">from</span><span style="color:#0A3069;--shiki-dark:#A5D6FF"> "rn-time-picker"</span><span style="color:#1F2328;--shiki-dark:#E6EDF3">;</span></span>
+<span class="line" data-line="3"></span>
+<span class="line" data-line="4"><span style="color:#CF222E;--shiki-dark:#FF7B72">interface</span><span style="color:#953800;--shiki-dark:#FFA657"> NumberComponentProps</span><span style="color:#1F2328;--shiki-dark:#E6EDF3"> {</span></span>
+<span class="line" data-line="5"><span style="color:#953800;--shiki-dark:#FFA657">  value</span><span style="color:#CF222E;--shiki-dark:#FF7B72">:</span><span style="color:#0550AE;--shiki-dark:#79C0FF"> number</span><span style="color:#1F2328;--shiki-dark:#E6EDF3">;</span></span>
+<span class="line" data-line="6"><span style="color:#953800;--shiki-dark:#FFA657">  isActive</span><span style="color:#CF222E;--shiki-dark:#FF7B72">:</span><span style="color:#0550AE;--shiki-dark:#79C0FF"> boolean</span><span style="color:#1F2328;--shiki-dark:#E6EDF3">;</span></span>
+<span class="line" data-line="7"><span style="color:#1F2328;--shiki-dark:#E6EDF3">}</span></span>
+<span class="line" data-line="8"></span>
+<span class="line" data-line="9"><span style="color:#CF222E;--shiki-dark:#FF7B72">interface</span><span style="color:#953800;--shiki-dark:#FFA657"> TopComponentProps</span><span style="color:#1F2328;--shiki-dark:#E6EDF3"> {</span></span>
+<span class="line" data-line="10"><span style="color:#953800;--shiki-dark:#FFA657">  hour</span><span style="color:#CF222E;--shiki-dark:#FF7B72">:</span><span style="color:#0550AE;--shiki-dark:#79C0FF"> number</span><span style="color:#1F2328;--shiki-dark:#E6EDF3">;</span></span>
+<span class="line" data-line="11"><span style="color:#953800;--shiki-dark:#FFA657">  minute</span><span style="color:#CF222E;--shiki-dark:#FF7B72">:</span><span style="color:#0550AE;--shiki-dark:#79C0FF"> number</span><span style="color:#1F2328;--shiki-dark:#E6EDF3">;</span></span>
+<span class="line" data-line="12"><span style="color:#8250DF;--shiki-dark:#D2A8FF">  switchMode</span><span style="color:#CF222E;--shiki-dark:#FF7B72">:</span><span style="color:#1F2328;--shiki-dark:#E6EDF3"> (</span><span style="color:#953800;--shiki-dark:#FFA657">mode</span><span style="color:#CF222E;--shiki-dark:#FF7B72">:</span><span style="color:#953800;--shiki-dark:#FFA657"> Mode</span><span style="color:#1F2328;--shiki-dark:#E6EDF3">) </span><span style="color:#CF222E;--shiki-dark:#FF7B72">=&gt;</span><span style="color:#0550AE;--shiki-dark:#79C0FF"> void</span><span style="color:#1F2328;--shiki-dark:#E6EDF3">;</span></span>
+<span class="line" data-line="13"><span style="color:#953800;--shiki-dark:#FFA657">  activeMode</span><span style="color:#CF222E;--shiki-dark:#FF7B72">:</span><span style="color:#953800;--shiki-dark:#FFA657"> Mode</span><span style="color:#1F2328;--shiki-dark:#E6EDF3">;</span></span>
+<span class="line" data-line="14"><span style="color:#953800;--shiki-dark:#FFA657">  period</span><span style="color:#CF222E;--shiki-dark:#FF7B72">:</span><span style="color:#0A3069;--shiki-dark:#A5D6FF"> "am"</span><span style="color:#CF222E;--shiki-dark:#FF7B72"> |</span><span style="color:#0A3069;--shiki-dark:#A5D6FF"> "pm"</span><span style="color:#1F2328;--shiki-dark:#E6EDF3">;</span></span>
+<span class="line" data-line="15"><span style="color:#8250DF;--shiki-dark:#D2A8FF">  setPeriod</span><span style="color:#CF222E;--shiki-dark:#FF7B72">:</span><span style="color:#1F2328;--shiki-dark:#E6EDF3"> (</span><span style="color:#953800;--shiki-dark:#FFA657">period</span><span style="color:#CF222E;--shiki-dark:#FF7B72">:</span><span style="color:#0A3069;--shiki-dark:#A5D6FF"> "am"</span><span style="color:#CF222E;--shiki-dark:#FF7B72"> |</span><span style="color:#0A3069;--shiki-dark:#A5D6FF"> "pm"</span><span style="color:#1F2328;--shiki-dark:#E6EDF3">) </span><span style="color:#CF222E;--shiki-dark:#FF7B72">=&gt;</span><span style="color:#0550AE;--shiki-dark:#79C0FF"> void</span><span style="color:#1F2328;--shiki-dark:#E6EDF3">;</span></span>
+<span class="line" data-line="16"><span style="color:#1F2328;--shiki-dark:#E6EDF3">}</span></span>
+<span class="line" data-line="17"></span>
+<span class="line" data-line="18"><span style="color:#CF222E;--shiki-dark:#FF7B72">interface</span><span style="color:#953800;--shiki-dark:#FFA657"> StyleTypes</span><span style="color:#1F2328;--shiki-dark:#E6EDF3"> {</span></span>
+<span class="line" data-line="19"><span style="color:#953800;--shiki-dark:#FFA657">  container</span><span style="color:#CF222E;--shiki-dark:#FF7B72">:</span><span style="color:#953800;--shiki-dark:#FFA657"> ViewStyle</span><span style="color:#1F2328;--shiki-dark:#E6EDF3">;</span></span>
+<span class="line" data-line="20"><span style="color:#953800;--shiki-dark:#FFA657">  timePickerContainer</span><span style="color:#CF222E;--shiki-dark:#FF7B72">:</span><span style="color:#953800;--shiki-dark:#FFA657"> ViewStyle</span><span style="color:#1F2328;--shiki-dark:#E6EDF3">;</span></span>
+<span class="line" data-line="21"><span style="color:#953800;--shiki-dark:#FFA657">  timePickerClock</span><span style="color:#CF222E;--shiki-dark:#FF7B72">:</span><span style="color:#953800;--shiki-dark:#FFA657"> ViewStyle</span><span style="color:#1F2328;--shiki-dark:#E6EDF3">;</span></span>
+<span class="line" data-line="22"><span style="color:#953800;--shiki-dark:#FFA657">  activeNumber</span><span style="color:#CF222E;--shiki-dark:#FF7B72">:</span><span style="color:#953800;--shiki-dark:#FFA657"> TextStyle</span><span style="color:#1F2328;--shiki-dark:#E6EDF3">;</span></span>
+<span class="line" data-line="23"><span style="color:#953800;--shiki-dark:#FFA657">  inActiveNumber</span><span style="color:#CF222E;--shiki-dark:#FF7B72">:</span><span style="color:#953800;--shiki-dark:#FFA657"> TextStyle</span><span style="color:#1F2328;--shiki-dark:#E6EDF3">;</span></span>
+<span class="line" data-line="24"><span style="color:#953800;--shiki-dark:#FFA657">  numberComponent</span><span style="color:#CF222E;--shiki-dark:#FF7B72">:</span><span style="color:#953800;--shiki-dark:#FFA657"> TextStyle</span><span style="color:#1F2328;--shiki-dark:#E6EDF3">;</span></span>
+<span class="line" data-line="25"><span style="color:#953800;--shiki-dark:#FFA657">  activeNumberComponent</span><span style="color:#CF222E;--shiki-dark:#FF7B72">:</span><span style="color:#953800;--shiki-dark:#FFA657"> ViewStyle</span><span style="color:#1F2328;--shiki-dark:#E6EDF3">;</span></span>
+<span class="line" data-line="26"><span style="color:#953800;--shiki-dark:#FFA657">  timeText</span><span style="color:#CF222E;--shiki-dark:#FF7B72">:</span><span style="color:#953800;--shiki-dark:#FFA657"> TextStyle</span><span style="color:#1F2328;--shiki-dark:#E6EDF3">;</span></span>
+<span class="line" data-line="27"><span style="color:#953800;--shiki-dark:#FFA657">  activeTimeText</span><span style="color:#CF222E;--shiki-dark:#FF7B72">:</span><span style="color:#953800;--shiki-dark:#FFA657"> ViewStyle</span><span style="color:#1F2328;--shiki-dark:#E6EDF3">;</span></span>
+<span class="line" data-line="28"><span style="color:#953800;--shiki-dark:#FFA657">  amPmContainer</span><span style="color:#CF222E;--shiki-dark:#FF7B72">:</span><span style="color:#953800;--shiki-dark:#FFA657"> ViewStyle</span><span style="color:#1F2328;--shiki-dark:#E6EDF3">;</span></span>
+<span class="line" data-line="29"><span style="color:#953800;--shiki-dark:#FFA657">  periodContainer</span><span style="color:#CF222E;--shiki-dark:#FF7B72">:</span><span style="color:#953800;--shiki-dark:#FFA657"> ViewStyle</span><span style="color:#1F2328;--shiki-dark:#E6EDF3">;</span></span>
+<span class="line" data-line="30"><span style="color:#953800;--shiki-dark:#FFA657">  activePeriodAM</span><span style="color:#CF222E;--shiki-dark:#FF7B72">:</span><span style="color:#953800;--shiki-dark:#FFA657"> ViewStyle</span><span style="color:#1F2328;--shiki-dark:#E6EDF3">;</span></span>
+<span class="line" data-line="31"><span style="color:#953800;--shiki-dark:#FFA657">  activePeriodPM</span><span style="color:#CF222E;--shiki-dark:#FF7B72">:</span><span style="color:#953800;--shiki-dark:#FFA657"> ViewStyle</span><span style="color:#1F2328;--shiki-dark:#E6EDF3">;</span></span>
+<span class="line" data-line="32"><span style="color:#953800;--shiki-dark:#FFA657">  amPmText</span><span style="color:#CF222E;--shiki-dark:#FF7B72">:</span><span style="color:#953800;--shiki-dark:#FFA657"> TextStyle</span><span style="color:#1F2328;--shiki-dark:#E6EDF3">;</span></span>
+<span class="line" data-line="33"><span style="color:#953800;--shiki-dark:#FFA657">  activePeriodText</span><span style="color:#CF222E;--shiki-dark:#FF7B72">:</span><span style="color:#953800;--shiki-dark:#FFA657"> TextStyle</span><span style="color:#1F2328;--shiki-dark:#E6EDF3">;</span></span>
+<span class="line" data-line="34"><span style="color:#1F2328;--shiki-dark:#E6EDF3">}</span></span>
+<span class="line" data-line="35"></span>
+<span class="line" data-line="36"><span style="color:#CF222E;--shiki-dark:#FF7B72">export</span><span style="color:#CF222E;--shiki-dark:#FF7B72"> default</span><span style="color:#CF222E;--shiki-dark:#FF7B72"> function</span><span style="color:#8250DF;--shiki-dark:#D2A8FF"> CustomizedTimePickerExample</span><span style="color:#953800;--shiki-dark:#FFA657">()</span><span style="color:#CF222E;--shiki-dark:#FF7B72">:</span><span style="color:#953800;--shiki-dark:#FFA657"> JSX.Element </span><span style="color:#1F2328;--shiki-dark:#E6EDF3">{</span></span>
+<span class="line" data-line="37"><span style="color:#CF222E;--shiki-dark:#FF7B72">  const</span><span style="color:#8250DF;--shiki-dark:#D2A8FF"> NumberComponent</span><span style="color:#CF222E;--shiki-dark:#FF7B72"> =</span><span style="color:#1F2328;--shiki-dark:#E6EDF3"> ({ </span><span style="color:#953800;--shiki-dark:#FFA657">value</span><span style="color:#1F2328;--shiki-dark:#E6EDF3">, </span><span style="color:#953800;--shiki-dark:#FFA657">isActive</span><span style="color:#1F2328;--shiki-dark:#E6EDF3"> }</span><span style="color:#CF222E;--shiki-dark:#FF7B72">:</span><span style="color:#953800;--shiki-dark:#FFA657"> NumberComponentProps</span><span style="color:#1F2328;--shiki-dark:#E6EDF3">)</span><span style="color:#CF222E;--shiki-dark:#FF7B72">:</span><span style="color:#953800;--shiki-dark:#FFA657"> JSX</span><span style="color:#1F2328;--shiki-dark:#E6EDF3">.</span><span style="color:#953800;--shiki-dark:#FFA657">Element</span><span style="color:#CF222E;--shiki-dark:#FF7B72"> =&gt;</span><span style="color:#1F2328;--shiki-dark:#E6EDF3"> (</span></span>
+<span class="line" data-line="38"><span style="color:#CF222E;--shiki-dark:#FF7B72">    &lt;</span><span style="color:#1F2328;--shiki-dark:#E6EDF3">Text style</span><span style="color:#CF222E;--shiki-dark:#FF7B72">=</span><span style="color:#1F2328;--shiki-dark:#E6EDF3">{[</span></span>
+<span class="line" data-line="39"><span style="color:#1F2328;--shiki-dark:#E6EDF3">      styles.numberComponent,</span></span>
+<span class="line" data-line="40"><span style="color:#1F2328;--shiki-dark:#E6EDF3">      isActive </span><span style="color:#CF222E;--shiki-dark:#FF7B72">&amp;&amp;</span><span style="color:#1F2328;--shiki-dark:#E6EDF3"> styles.activeNumberComponent</span></span>
+<span class="line" data-line="41"><span style="color:#1F2328;--shiki-dark:#E6EDF3">    ]}&gt;</span></span>
+<span class="line" data-line="42"><span style="color:#1F2328;--shiki-dark:#E6EDF3">      {value}</span></span>
+<span class="line" data-line="43"><span style="color:#1F2328;--shiki-dark:#E6EDF3">    &lt;/Text&gt;</span></span>
+<span class="line" data-line="44"><span style="color:#1F2328;--shiki-dark:#E6EDF3">  );</span></span>
+<span class="line" data-line="45"></span>
+<span class="line" data-line="46"><span style="color:#1F2328;--shiki-dark:#E6EDF3">  const TopComponent = ({</span></span>
+<span class="line" data-line="47"><span style="color:#1F2328;--shiki-dark:#E6EDF3">    hour,</span></span>
+<span class="line" data-line="48"><span style="color:#1F2328;--shiki-dark:#E6EDF3">    minute,</span></span>
+<span class="line" data-line="49"><span style="color:#1F2328;--shiki-dark:#E6EDF3">    switchMode,</span></span>
+<span class="line" data-line="50"><span style="color:#1F2328;--shiki-dark:#E6EDF3">    activeMode,</span></span>
+<span class="line" data-line="51"><span style="color:#1F2328;--shiki-dark:#E6EDF3">    period,</span></span>
+<span class="line" data-line="52"><span style="color:#1F2328;--shiki-dark:#E6EDF3">    setPeriod</span></span>
+<span class="line" data-line="53"><span style="color:#1F2328;--shiki-dark:#E6EDF3">  }: TopComponentProps)</span><span style="color:#CF222E;--shiki-dark:#FF7B72">:</span><span style="color:#953800;--shiki-dark:#FFA657"> JSX</span><span style="color:#1F2328;--shiki-dark:#E6EDF3">.</span><span style="color:#953800;--shiki-dark:#FFA657">Element</span><span style="color:#CF222E;--shiki-dark:#FF7B72"> =&gt;</span><span style="color:#1F2328;--shiki-dark:#E6EDF3"> {</span></span>
+<span class="line" data-line="54"><span style="color:#CF222E;--shiki-dark:#FF7B72">    return</span><span style="color:#1F2328;--shiki-dark:#E6EDF3"> (</span></span>
+<span class="line" data-line="55"><span style="color:#CF222E;--shiki-dark:#FF7B72">      &lt;</span><span style="color:#1F2328;--shiki-dark:#E6EDF3">View style</span><span style="color:#CF222E;--shiki-dark:#FF7B72">=</span><span style="color:#1F2328;--shiki-dark:#E6EDF3">{styles.container}</span><span style="color:#CF222E;--shiki-dark:#FF7B72">&gt;</span></span>
+<span class="line" data-line="56"><span style="color:#CF222E;--shiki-dark:#FF7B72">        &lt;</span><span style="color:#953800;--shiki-dark:#FFA657">Text</span></span>
+<span class="line" data-line="57"><span style="color:#1F2328;--shiki-dark:#E6EDF3">          style</span><span style="color:#CF222E;--shiki-dark:#FF7B72">=</span><span style="color:#1F2328;--shiki-dark:#E6EDF3">{[</span></span>
+<span class="line" data-line="58"><span style="color:#1F2328;--shiki-dark:#E6EDF3">            styles.timeText,</span></span>
+<span class="line" data-line="59"><span style="color:#1F2328;--shiki-dark:#E6EDF3">            activeMode </span><span style="color:#CF222E;--shiki-dark:#FF7B72">===</span><span style="color:#1F2328;--shiki-dark:#E6EDF3"> Mode.</span><span style="color:#0550AE;--shiki-dark:#79C0FF">HOUR</span><span style="color:#CF222E;--shiki-dark:#FF7B72"> &amp;&amp;</span><span style="color:#1F2328;--shiki-dark:#E6EDF3"> styles.activeTimeText</span></span>
+<span class="line" data-line="60"><span style="color:#1F2328;--shiki-dark:#E6EDF3">          ]}</span></span>
+<span class="line" data-line="61"><span style="color:#1F2328;--shiki-dark:#E6EDF3">          onPress={() =&gt; switchMode(Mode.HOUR)}</span></span>
+<span class="line" data-line="62"><span style="color:#1F2328;--shiki-dark:#E6EDF3">        &gt;</span></span>
+<span class="line" data-line="63"><span style="color:#1F2328;--shiki-dark:#E6EDF3">          {hour.toString().padStart(2, "0")}</span></span>
+<span class="line" data-line="64"><span style="color:#1F2328;--shiki-dark:#E6EDF3">        &lt;/Text&gt;</span></span>
+<span class="line" data-line="65"></span>
+<span class="line" data-line="66"><span style="color:#1F2328;--shiki-dark:#E6EDF3">        &lt;Text</span></span>
+<span class="line" data-line="67"><span style="color:#1F2328;--shiki-dark:#E6EDF3">          style={[</span></span>
+<span class="line" data-line="68"><span style="color:#1F2328;--shiki-dark:#E6EDF3">            styles.timeText,</span></span>
+<span class="line" data-line="69"><span style="color:#1F2328;--shiki-dark:#E6EDF3">            activeMode </span><span style="color:#CF222E;--shiki-dark:#FF7B72">===</span><span style="color:#1F2328;--shiki-dark:#E6EDF3"> Mode.</span><span style="color:#0550AE;--shiki-dark:#79C0FF">MINUTE</span><span style="color:#CF222E;--shiki-dark:#FF7B72"> &amp;&amp;</span><span style="color:#1F2328;--shiki-dark:#E6EDF3"> styles.activeTimeText</span></span>
+<span class="line" data-line="70"><span style="color:#1F2328;--shiki-dark:#E6EDF3">          ]}</span></span>
+<span class="line" data-line="71"><span style="color:#1F2328;--shiki-dark:#E6EDF3">          onPress={() =&gt; switchMode(Mode.MINUTE)}</span></span>
+<span class="line" data-line="72"><span style="color:#1F2328;--shiki-dark:#E6EDF3">        &gt;</span></span>
+<span class="line" data-line="73"><span style="color:#1F2328;--shiki-dark:#E6EDF3">          {minute.toString().padStart(2, "0")}</span></span>
+<span class="line" data-line="74"><span style="color:#1F2328;--shiki-dark:#E6EDF3">        &lt;/Text&gt;</span></span>
+<span class="line" data-line="75"></span>
+<span class="line" data-line="76"><span style="color:#1F2328;--shiki-dark:#E6EDF3">        &lt;TouchableHighlight</span></span>
+<span class="line" data-line="77"><span style="color:#1F2328;--shiki-dark:#E6EDF3">          onPress={() =&gt; setPeriod(period === "am" ? "pm" : </span><span style="color:#0A3069;--shiki-dark:#A5D6FF">"am"</span><span style="color:#1F2328;--shiki-dark:#E6EDF3">)}</span></span>
+<span class="line" data-line="78"><span style="color:#1F2328;--shiki-dark:#E6EDF3">          style</span><span style="color:#CF222E;--shiki-dark:#FF7B72">=</span><span style="color:#1F2328;--shiki-dark:#E6EDF3">{styles.amPmContainer}</span></span>
+<span class="line" data-line="79"><span style="color:#CF222E;--shiki-dark:#FF7B72">        &gt;</span></span>
+<span class="line" data-line="80"><span style="color:#CF222E;--shiki-dark:#FF7B72">          &lt;&gt;</span></span>
+<span class="line" data-line="81"><span style="color:#CF222E;--shiki-dark:#FF7B72">            &lt;</span><span style="color:#953800;--shiki-dark:#FFA657">View</span></span>
+<span class="line" data-line="82"><span style="color:#1F2328;--shiki-dark:#E6EDF3">              style</span><span style="color:#CF222E;--shiki-dark:#FF7B72">=</span><span style="color:#1F2328;--shiki-dark:#E6EDF3">{[</span></span>
+<span class="line" data-line="83"><span style="color:#1F2328;--shiki-dark:#E6EDF3">                styles.periodContainer,</span></span>
+<span class="line" data-line="84"><span style="color:#1F2328;--shiki-dark:#E6EDF3">                period </span><span style="color:#CF222E;--shiki-dark:#FF7B72">===</span><span style="color:#0A3069;--shiki-dark:#A5D6FF"> "am"</span><span style="color:#CF222E;--shiki-dark:#FF7B72"> &amp;&amp;</span><span style="color:#1F2328;--shiki-dark:#E6EDF3"> styles.activePeriodAM</span></span>
+<span class="line" data-line="85"><span style="color:#1F2328;--shiki-dark:#E6EDF3">              ]}</span></span>
+<span class="line" data-line="86"><span style="color:#1F2328;--shiki-dark:#E6EDF3">            &gt;</span></span>
+<span class="line" data-line="87"><span style="color:#1F2328;--shiki-dark:#E6EDF3">              &lt;Text</span></span>
+<span class="line" data-line="88"><span style="color:#1F2328;--shiki-dark:#E6EDF3">                style={[</span></span>
+<span class="line" data-line="89"><span style="color:#1F2328;--shiki-dark:#E6EDF3">                  styles.amPmText,</span></span>
+<span class="line" data-line="90"><span style="color:#1F2328;--shiki-dark:#E6EDF3">                  period </span><span style="color:#CF222E;--shiki-dark:#FF7B72">===</span><span style="color:#0A3069;--shiki-dark:#A5D6FF"> "am"</span><span style="color:#CF222E;--shiki-dark:#FF7B72"> &amp;&amp;</span><span style="color:#1F2328;--shiki-dark:#E6EDF3"> styles.activePeriodText</span></span>
+<span class="line" data-line="91"><span style="color:#1F2328;--shiki-dark:#E6EDF3">                ]}</span></span>
+<span class="line" data-line="92"><span style="color:#1F2328;--shiki-dark:#E6EDF3">              &gt;</span></span>
+<span class="line" data-line="93"><span style="color:#1F2328;--shiki-dark:#E6EDF3">                AM</span></span>
+<span class="line" data-line="94"><span style="color:#1F2328;--shiki-dark:#E6EDF3">              &lt;/Text&gt;</span></span>
+<span class="line" data-line="95"><span style="color:#1F2328;--shiki-dark:#E6EDF3">            &lt;/View&gt;</span></span>
+<span class="line" data-line="96"></span>
+<span class="line" data-line="97"><span style="color:#1F2328;--shiki-dark:#E6EDF3">            &lt;View</span></span>
+<span class="line" data-line="98"><span style="color:#1F2328;--shiki-dark:#E6EDF3">              style={[</span></span>
+<span class="line" data-line="99"><span style="color:#1F2328;--shiki-dark:#E6EDF3">                styles.periodContainer,</span></span>
+<span class="line" data-line="100"><span style="color:#1F2328;--shiki-dark:#E6EDF3">                period </span><span style="color:#CF222E;--shiki-dark:#FF7B72">===</span><span style="color:#0A3069;--shiki-dark:#A5D6FF"> "pm"</span><span style="color:#CF222E;--shiki-dark:#FF7B72"> &amp;&amp;</span><span style="color:#1F2328;--shiki-dark:#E6EDF3"> styles.activePeriodPM</span></span>
+<span class="line" data-line="101"><span style="color:#1F2328;--shiki-dark:#E6EDF3">              ]}</span></span>
+<span class="line" data-line="102"><span style="color:#1F2328;--shiki-dark:#E6EDF3">            &gt;</span></span>
+<span class="line" data-line="103"><span style="color:#1F2328;--shiki-dark:#E6EDF3">              &lt;Text</span></span>
+<span class="line" data-line="104"><span style="color:#1F2328;--shiki-dark:#E6EDF3">                style={[</span></span>
+<span class="line" data-line="105"><span style="color:#1F2328;--shiki-dark:#E6EDF3">                  styles.amPmText,</span></span>
+<span class="line" data-line="106"><span style="color:#1F2328;--shiki-dark:#E6EDF3">                  period </span><span style="color:#CF222E;--shiki-dark:#FF7B72">===</span><span style="color:#0A3069;--shiki-dark:#A5D6FF"> "pm"</span><span style="color:#CF222E;--shiki-dark:#FF7B72"> &amp;&amp;</span><span style="color:#1F2328;--shiki-dark:#E6EDF3"> styles.activePeriodText</span></span>
+<span class="line" data-line="107"><span style="color:#1F2328;--shiki-dark:#E6EDF3">                ]}</span></span>
+<span class="line" data-line="108"><span style="color:#1F2328;--shiki-dark:#E6EDF3">              &gt;</span></span>
+<span class="line" data-line="109"><span style="color:#1F2328;--shiki-dark:#E6EDF3">                PM</span></span>
+<span class="line" data-line="110"><span style="color:#1F2328;--shiki-dark:#E6EDF3">              &lt;/Text&gt;</span></span>
+<span class="line" data-line="111"><span style="color:#1F2328;--shiki-dark:#E6EDF3">            &lt;/View&gt;</span></span>
+<span class="line" data-line="112"><span style="color:#1F2328;--shiki-dark:#E6EDF3">          &lt;/&gt;</span></span>
+<span class="line" data-line="113"><span style="color:#1F2328;--shiki-dark:#E6EDF3">        &lt;/TouchableHighlight&gt;</span></span>
+<span class="line" data-line="114"><span style="color:#1F2328;--shiki-dark:#E6EDF3">      &lt;/View&gt;</span></span>
+<span class="line" data-line="115"><span style="color:#1F2328;--shiki-dark:#E6EDF3">    );</span></span>
+<span class="line" data-line="116"><span style="color:#1F2328;--shiki-dark:#E6EDF3">  };</span></span>
+<span class="line" data-line="117"></span>
+<span class="line" data-line="118"><span style="color:#1F2328;--shiki-dark:#E6EDF3">  return (</span></span>
+<span class="line" data-line="119"><span style="color:#1F2328;--shiki-dark:#E6EDF3">    &lt;TimePicker</span></span>
+<span class="line" data-line="120"><span style="color:#1F2328;--shiki-dark:#E6EDF3">      radius={140}</span></span>
+<span class="line" data-line="121"><span style="color:#1F2328;--shiki-dark:#E6EDF3">      numberRadius={110}</span></span>
+<span class="line" data-line="122"><span style="color:#1F2328;--shiki-dark:#E6EDF3">      customComponents={{</span></span>
+<span class="line" data-line="123"><span style="color:#1F2328;--shiki-dark:#E6EDF3">        NumberComponent,</span></span>
+<span class="line" data-line="124"><span style="color:#1F2328;--shiki-dark:#E6EDF3">        TopComponent</span></span>
+<span class="line" data-line="125"><span style="color:#1F2328;--shiki-dark:#E6EDF3">      }}</span></span>
+<span class="line" data-line="126"><span style="color:#1F2328;--shiki-dark:#E6EDF3">      customStyles={{</span></span>
+<span class="line" data-line="127"><span style="color:#1F2328;--shiki-dark:#E6EDF3">        container: styles.timePickerContainer,</span></span>
+<span class="line" data-line="128"><span style="color:#1F2328;--shiki-dark:#E6EDF3">        clock: styles.timePickerClock,</span></span>
+<span class="line" data-line="129"><span style="color:#1F2328;--shiki-dark:#E6EDF3">        activeNumber: styles.activeNumber,</span></span>
+<span class="line" data-line="130"><span style="color:#1F2328;--shiki-dark:#E6EDF3">        inActiveNumber: styles.inActiveNumber</span></span>
+<span class="line" data-line="131"><span style="color:#1F2328;--shiki-dark:#E6EDF3">      }}</span></span>
+<span class="line" data-line="132"><span style="color:#1F2328;--shiki-dark:#E6EDF3">      colors</span><span style="color:#CF222E;--shiki-dark:#FF7B72">=</span><span style="color:#1F2328;--shiki-dark:#E6EDF3">{{</span></span>
+<span class="line" data-line="133"><span style="color:#953800;--shiki-dark:#FFA657">        clockActiveColor</span><span style="color:#1F2328;--shiki-dark:#E6EDF3">: </span><span style="color:#0A3069;--shiki-dark:#A5D6FF">"#FF6500"</span><span style="color:#1F2328;--shiki-dark:#E6EDF3">,</span></span>
+<span class="line" data-line="134"><span style="color:#953800;--shiki-dark:#FFA657">        topActiveColor</span><span style="color:#1F2328;--shiki-dark:#E6EDF3">: </span><span style="color:#0A3069;--shiki-dark:#A5D6FF">"#0B192C"</span><span style="color:#1F2328;--shiki-dark:#E6EDF3">,</span></span>
+<span class="line" data-line="135"><span style="color:#953800;--shiki-dark:#FFA657">        topActiveTextColor</span><span style="color:#1F2328;--shiki-dark:#E6EDF3">: </span><span style="color:#0A3069;--shiki-dark:#A5D6FF">"white"</span><span style="color:#1F2328;--shiki-dark:#E6EDF3">,</span></span>
+<span class="line" data-line="136"><span style="color:#953800;--shiki-dark:#FFA657">        topInActiveTextColor</span><span style="color:#1F2328;--shiki-dark:#E6EDF3">: </span><span style="color:#0A3069;--shiki-dark:#A5D6FF">"black"</span></span>
+<span class="line" data-line="137"><span style="color:#1F2328;--shiki-dark:#E6EDF3">      }}</span></span>
+<span class="line" data-line="138"><span style="color:#CF222E;--shiki-dark:#FF7B72">    /&gt;</span></span>
+<span class="line" data-line="139"><span style="color:#1F2328;--shiki-dark:#E6EDF3">  );</span></span>
+<span class="line" data-line="140"><span style="color:#1F2328;--shiki-dark:#E6EDF3">}</span></span>
+<span class="line" data-line="141"></span>
+<span class="line" data-line="142"><span style="color:#1F2328;--shiki-dark:#E6EDF3">const styles </span><span style="color:#CF222E;--shiki-dark:#FF7B72">=</span><span style="color:#1F2328;--shiki-dark:#E6EDF3"> StyleSheet.</span><span style="color:#8250DF;--shiki-dark:#D2A8FF">create</span><span style="color:#1F2328;--shiki-dark:#E6EDF3">&lt;</span><span style="color:#953800;--shiki-dark:#FFA657">StyleTypes</span><span style="color:#1F2328;--shiki-dark:#E6EDF3">&gt;({</span></span>
+<span class="line" data-line="143"><span style="color:#1F2328;--shiki-dark:#E6EDF3">  container: {</span></span>
+<span class="line" data-line="144"><span style="color:#1F2328;--shiki-dark:#E6EDF3">    flexDirection: </span><span style="color:#0A3069;--shiki-dark:#A5D6FF">"row"</span><span style="color:#1F2328;--shiki-dark:#E6EDF3">,</span></span>
+<span class="line" data-line="145"><span style="color:#1F2328;--shiki-dark:#E6EDF3">    gap: </span><span style="color:#0550AE;--shiki-dark:#79C0FF">12</span><span style="color:#1F2328;--shiki-dark:#E6EDF3">,</span></span>
+<span class="line" data-line="146"><span style="color:#1F2328;--shiki-dark:#E6EDF3">  },</span></span>
+<span class="line" data-line="147"><span style="color:#1F2328;--shiki-dark:#E6EDF3">  timePickerContainer: {</span></span>
+<span class="line" data-line="148"><span style="color:#1F2328;--shiki-dark:#E6EDF3">    backgroundColor: </span><span style="color:#0A3069;--shiki-dark:#A5D6FF">"gray"</span><span style="color:#1F2328;--shiki-dark:#E6EDF3">,</span></span>
+<span class="line" data-line="149"><span style="color:#1F2328;--shiki-dark:#E6EDF3">    padding: </span><span style="color:#0550AE;--shiki-dark:#79C0FF">12</span><span style="color:#1F2328;--shiki-dark:#E6EDF3">,</span></span>
+<span class="line" data-line="150"><span style="color:#1F2328;--shiki-dark:#E6EDF3">    borderRadius: </span><span style="color:#0550AE;--shiki-dark:#79C0FF">10</span></span>
+<span class="line" data-line="151"><span style="color:#1F2328;--shiki-dark:#E6EDF3">  },</span></span>
+<span class="line" data-line="152"><span style="color:#1F2328;--shiki-dark:#E6EDF3">  timePickerClock: {</span></span>
+<span class="line" data-line="153"><span style="color:#1F2328;--shiki-dark:#E6EDF3">    backgroundColor: </span><span style="color:#0A3069;--shiki-dark:#A5D6FF">"#1E3E62"</span></span>
+<span class="line" data-line="154"><span style="color:#1F2328;--shiki-dark:#E6EDF3">  },</span></span>
+<span class="line" data-line="155"><span style="color:#1F2328;--shiki-dark:#E6EDF3">  activeNumber: {</span></span>
+<span class="line" data-line="156"><span style="color:#1F2328;--shiki-dark:#E6EDF3">    fontSize: </span><span style="color:#0550AE;--shiki-dark:#79C0FF">19</span><span style="color:#1F2328;--shiki-dark:#E6EDF3">,</span></span>
+<span class="line" data-line="157"><span style="color:#1F2328;--shiki-dark:#E6EDF3">    width: </span><span style="color:#0550AE;--shiki-dark:#79C0FF">40</span><span style="color:#1F2328;--shiki-dark:#E6EDF3">,</span></span>
+<span class="line" data-line="158"><span style="color:#1F2328;--shiki-dark:#E6EDF3">    height: </span><span style="color:#0550AE;--shiki-dark:#79C0FF">40</span></span>
+<span class="line" data-line="159"><span style="color:#1F2328;--shiki-dark:#E6EDF3">  },</span></span>
+<span class="line" data-line="160"><span style="color:#1F2328;--shiki-dark:#E6EDF3">  inActiveNumber: {</span></span>
+<span class="line" data-line="161"><span style="color:#1F2328;--shiki-dark:#E6EDF3">    fontSize: </span><span style="color:#0550AE;--shiki-dark:#79C0FF">19</span><span style="color:#1F2328;--shiki-dark:#E6EDF3">,</span></span>
+<span class="line" data-line="162"><span style="color:#1F2328;--shiki-dark:#E6EDF3">    width: </span><span style="color:#0550AE;--shiki-dark:#79C0FF">40</span><span style="color:#1F2328;--shiki-dark:#E6EDF3">,</span></span>
+<span class="line" data-line="163"><span style="color:#1F2328;--shiki-dark:#E6EDF3">    height: </span><span style="color:#0550AE;--shiki-dark:#79C0FF">40</span></span>
+<span class="line" data-line="164"><span style="color:#1F2328;--shiki-dark:#E6EDF3">  },</span></span>
+<span class="line" data-line="165"><span style="color:#1F2328;--shiki-dark:#E6EDF3">  numberComponent: {</span></span>
+<span class="line" data-line="166"><span style="color:#1F2328;--shiki-dark:#E6EDF3">    height: </span><span style="color:#0550AE;--shiki-dark:#79C0FF">55</span><span style="color:#1F2328;--shiki-dark:#E6EDF3">,</span></span>
+<span class="line" data-line="167"><span style="color:#1F2328;--shiki-dark:#E6EDF3">    width: </span><span style="color:#0550AE;--shiki-dark:#79C0FF">55</span><span style="color:#1F2328;--shiki-dark:#E6EDF3">,</span></span>
+<span class="line" data-line="168"><span style="color:#1F2328;--shiki-dark:#E6EDF3">    borderRadius: </span><span style="color:#0550AE;--shiki-dark:#79C0FF">100</span><span style="color:#1F2328;--shiki-dark:#E6EDF3">,</span></span>
+<span class="line" data-line="169"><span style="color:#1F2328;--shiki-dark:#E6EDF3">    zIndex: </span><span style="color:#0550AE;--shiki-dark:#79C0FF">10</span><span style="color:#1F2328;--shiki-dark:#E6EDF3">,</span></span>
+<span class="line" data-line="170"><span style="color:#1F2328;--shiki-dark:#E6EDF3">    textAlignVertical: </span><span style="color:#0A3069;--shiki-dark:#A5D6FF">"center"</span><span style="color:#1F2328;--shiki-dark:#E6EDF3">,</span></span>
+<span class="line" data-line="171"><span style="color:#1F2328;--shiki-dark:#E6EDF3">    textAlign: </span><span style="color:#0A3069;--shiki-dark:#A5D6FF">"center"</span><span style="color:#1F2328;--shiki-dark:#E6EDF3">,</span></span>
+<span class="line" data-line="172"><span style="color:#1F2328;--shiki-dark:#E6EDF3">    fontWeight: </span><span style="color:#0A3069;--shiki-dark:#A5D6FF">"600"</span><span style="color:#1F2328;--shiki-dark:#E6EDF3">,</span></span>
+<span class="line" data-line="173"><span style="color:#1F2328;--shiki-dark:#E6EDF3">    fontSize: </span><span style="color:#0550AE;--shiki-dark:#79C0FF">20</span><span style="color:#1F2328;--shiki-dark:#E6EDF3">,</span></span>
+<span class="line" data-line="174"><span style="color:#1F2328;--shiki-dark:#E6EDF3">    color: </span><span style="color:#0A3069;--shiki-dark:#A5D6FF">"white"</span></span>
+<span class="line" data-line="175"><span style="color:#1F2328;--shiki-dark:#E6EDF3">  },</span></span>
+<span class="line" data-line="176"><span style="color:#1F2328;--shiki-dark:#E6EDF3">  activeNumberComponent: {</span></span>
+<span class="line" data-line="177"><span style="color:#1F2328;--shiki-dark:#E6EDF3">    backgroundColor: </span><span style="color:#0A3069;--shiki-dark:#A5D6FF">"#FF6500"</span></span>
+<span class="line" data-line="178"><span style="color:#1F2328;--shiki-dark:#E6EDF3">  },</span></span>
+<span class="line" data-line="179"><span style="color:#1F2328;--shiki-dark:#E6EDF3">  timeText: {</span></span>
+<span class="line" data-line="180"><span style="color:#1F2328;--shiki-dark:#E6EDF3">    fontSize: </span><span style="color:#0550AE;--shiki-dark:#79C0FF">18</span><span style="color:#1F2328;--shiki-dark:#E6EDF3">,</span></span>
+<span class="line" data-line="181"><span style="color:#1F2328;--shiki-dark:#E6EDF3">    fontWeight: </span><span style="color:#0A3069;--shiki-dark:#A5D6FF">"600"</span><span style="color:#1F2328;--shiki-dark:#E6EDF3">,</span></span>
+<span class="line" data-line="182"><span style="color:#1F2328;--shiki-dark:#E6EDF3">    backgroundColor: </span><span style="color:#0A3069;--shiki-dark:#A5D6FF">"rgba(30, 62, 98,0.7)"</span><span style="color:#1F2328;--shiki-dark:#E6EDF3">,</span></span>
+<span class="line" data-line="183"><span style="color:#1F2328;--shiki-dark:#E6EDF3">    padding: </span><span style="color:#0550AE;--shiki-dark:#79C0FF">12</span><span style="color:#1F2328;--shiki-dark:#E6EDF3">,</span></span>
+<span class="line" data-line="184"><span style="color:#1F2328;--shiki-dark:#E6EDF3">    borderRadius: </span><span style="color:#0550AE;--shiki-dark:#79C0FF">12</span><span style="color:#1F2328;--shiki-dark:#E6EDF3">,</span></span>
+<span class="line" data-line="185"><span style="color:#1F2328;--shiki-dark:#E6EDF3">    color: </span><span style="color:#0A3069;--shiki-dark:#A5D6FF">"white"</span></span>
+<span class="line" data-line="186"><span style="color:#1F2328;--shiki-dark:#E6EDF3">  },</span></span>
+<span class="line" data-line="187"><span style="color:#1F2328;--shiki-dark:#E6EDF3">  activeTimeText: {</span></span>
+<span class="line" data-line="188"><span style="color:#1F2328;--shiki-dark:#E6EDF3">    backgroundColor: </span><span style="color:#0A3069;--shiki-dark:#A5D6FF">"#FF6500"</span></span>
+<span class="line" data-line="189"><span style="color:#1F2328;--shiki-dark:#E6EDF3">  },</span></span>
+<span class="line" data-line="190"><span style="color:#1F2328;--shiki-dark:#E6EDF3">  amPmContainer: {</span></span>
+<span class="line" data-line="191"><span style="color:#1F2328;--shiki-dark:#E6EDF3">    flexDirection: </span><span style="color:#0A3069;--shiki-dark:#A5D6FF">"column"</span><span style="color:#1F2328;--shiki-dark:#E6EDF3">,</span></span>
+<span class="line" data-line="192"><span style="color:#1F2328;--shiki-dark:#E6EDF3">    borderColor: </span><span style="color:#0A3069;--shiki-dark:#A5D6FF">"black"</span><span style="color:#1F2328;--shiki-dark:#E6EDF3">,</span></span>
+<span class="line" data-line="193"><span style="color:#1F2328;--shiki-dark:#E6EDF3">    borderWidth: </span><span style="color:#0550AE;--shiki-dark:#79C0FF">1</span><span style="color:#1F2328;--shiki-dark:#E6EDF3">,</span></span>
+<span class="line" data-line="194"><span style="color:#1F2328;--shiki-dark:#E6EDF3">  },</span></span>
+<span class="line" data-line="195"><span style="color:#1F2328;--shiki-dark:#E6EDF3">  periodContainer: {</span></span>
+<span class="line" data-line="196"><span style="color:#1F2328;--shiki-dark:#E6EDF3">    padding: </span><span style="color:#0550AE;--shiki-dark:#79C0FF">4</span><span style="color:#1F2328;--shiki-dark:#E6EDF3">,</span></span>
+<span class="line" data-line="197"><span style="color:#1F2328;--shiki-dark:#E6EDF3">    borderRadius: </span><span style="color:#0550AE;--shiki-dark:#79C0FF">8</span><span style="color:#1F2328;--shiki-dark:#E6EDF3">,</span></span>
+<span class="line" data-line="198"><span style="color:#1F2328;--shiki-dark:#E6EDF3">    justifyContent: </span><span style="color:#0A3069;--shiki-dark:#A5D6FF">"center"</span><span style="color:#1F2328;--shiki-dark:#E6EDF3">,</span></span>
+<span class="line" data-line="199"><span style="color:#1F2328;--shiki-dark:#E6EDF3">    alignItems: </span><span style="color:#0A3069;--shiki-dark:#A5D6FF">"center"</span><span style="color:#1F2328;--shiki-dark:#E6EDF3">,</span></span>
+<span class="line" data-line="200"><span style="color:#1F2328;--shiki-dark:#E6EDF3">  },</span></span>
+<span class="line" data-line="201"><span style="color:#1F2328;--shiki-dark:#E6EDF3">  activePeriodAM: {</span></span>
+<span class="line" data-line="202"><span style="color:#1F2328;--shiki-dark:#E6EDF3">    backgroundColor: </span><span style="color:#0A3069;--shiki-dark:#A5D6FF">"#32CD32"</span></span>
+<span class="line" data-line="203"><span style="color:#1F2328;--shiki-dark:#E6EDF3">  },</span></span>
+<span class="line" data-line="204"><span style="color:#1F2328;--shiki-dark:#E6EDF3">  activePeriodPM: {</span></span>
+<span class="line" data-line="205"><span style="color:#1F2328;--shiki-dark:#E6EDF3">    backgroundColor: </span><span style="color:#0A3069;--shiki-dark:#A5D6FF">"#FFD700"</span></span>
+<span class="line" data-line="206"><span style="color:#1F2328;--shiki-dark:#E6EDF3">  },</span></span>
+<span class="line" data-line="207"><span style="color:#1F2328;--shiki-dark:#E6EDF3">  amPmText: {</span></span>
+<span class="line" data-line="208"><span style="color:#1F2328;--shiki-dark:#E6EDF3">    fontSize: </span><span style="color:#0550AE;--shiki-dark:#79C0FF">12</span><span style="color:#1F2328;--shiki-dark:#E6EDF3">,</span></span>
+<span class="line" data-line="209"><span style="color:#1F2328;--shiki-dark:#E6EDF3">    fontWeight: </span><span style="color:#0A3069;--shiki-dark:#A5D6FF">"600"</span><span style="color:#1F2328;--shiki-dark:#E6EDF3">,</span></span>
+<span class="line" data-line="210"><span style="color:#1F2328;--shiki-dark:#E6EDF3">  },</span></span>
+<span class="line" data-line="211"><span style="color:#1F2328;--shiki-dark:#E6EDF3">  activePeriodText: {</span></span>
+<span class="line" data-line="212"><span style="color:#1F2328;--shiki-dark:#E6EDF3">    color: </span><span style="color:#0A3069;--shiki-dark:#A5D6FF">"#FFFFFF"</span></span>
+<span class="line" data-line="213"><span style="color:#1F2328;--shiki-dark:#E6EDF3">  }</span></span>
+<span class="line" data-line="214"><span style="color:#1F2328;--shiki-dark:#E6EDF3">});</span></span></code></pre></div></div></div>
+                    </div>
+                </main>
+                <div class="footer">
+                    <div class="content">
+                        <div class="date">
+                            <div>Jan 20, 2025</div>
+                        </div>
+                        
+                            <a href="/react-native-time-picker/documentation/customization/" class="column left-column" title="Customization">
+                                <div class="icon">
+                                    <sl-icon name="chevron-left"></sl-icon>
+                                </div>
+                                <div class="label">
+                                    <div class="title">PREVIOUS</div>
+                                    <div class="line-clamp-2">
+                                        Customization
+                                    </div>
+                                </div>
+                            </a>
+                        
+                         <div></div> 
+                    </div>
+                </div>
+            </article>
+            <aside class="toc">
+                <nav class="toc">
+                    
+                    <div class="title">
+                        <sl-icon class="icon" name="list-nested"></sl-icon>
+                        <div>
+                            On this page
+                        </div>
+                    </div>
+                    <div id="toc-list" class="list">
+                        
+                            
+                                <div class="heading-2 line-clamp-2">
+                                    <a href="/react-native-time-picker/documentation/examples/#basic-example">Basic Example</a>
+                                </div>
+                                
+                        
+                            
+                                <div class="heading-2 line-clamp-2">
+                                    <a href="/react-native-time-picker/documentation/examples/#example-with-custom-components">Example with custom components</a>
+                                </div>
+                                
+                        
+                    </div>
+                    
+                </nav>
+            </aside>
+        </div>
+        <footer>
+            <div class="stack__column stack__gap-4 stack__center">
+                
+                    <div class="stack__row stack__gap-7 stack__center">
+                        
+                            <div class="font-x-small">
+                                <a href="https://github.com/Anurag-Raut" target="_blank">Github</a>
+                            </div>
+                        
+                    </div>
+                
+                <div class="stack__row stack__center">
+                    <span><span>Anurag Raut &copy; 2025</span>
+</span>
+                </div>
+            </div>
+        </footer>
+    </div>
+</div>
+<sl-dialog id="search-dialog" class="dialog_control dialog__search">
+    <div slot="label">
+        <p>Search</p>
+    </div>
+    <div class="pane stack__column stack__gap-4">
+        <div>
+            <sl-input
+                id="search-input"
+                type="text"
+                size="small"
+                autocomplete="off"
+                autofocus
+                clearable
+                placeholder="Type text you want to search..."
+            >
+            </sl-input>
+        </div>
+        <div id="search-result" class="stack__column stack__gap-4 search-result">
+        </div>
+        <div id="search-footer" class="footer"></div>
+    </div>
+</sl-dialog>
+<script type="module" src="https://anurag-raut.github.io/react-native-time-picker/_lib/index.js" data-shoelace="https://anurag-raut.github.io/react-native-time-picker/_lib"></script>
+<script type="module">
+    import {initPage, initTheme, initSearch, initToc} from 'https://anurag-raut.github.io/react-native-time-picker/_lib/init.js';
+    import {preInitTree} from 'https://anurag-raut.github.io/react-native-time-picker/_lib/pre.js';
+    preInitTree();
+    await initPage();
+    await initTheme('system');
+    await initSearch('https://anurag-raut.github.io/react-native-time-picker', '1737395696782');
+    document.documentElement.style.visibility = 'visible';
+    document.documentElement.style.opacity = '1';
+    initToc();
+</script>
+
+</body>
+</html>
