@@ -67,7 +67,7 @@
   "bugs": {
     "url": "https://github.com/Anurag-Raut/react-native-time-picker/issues"
   },
-  "homepage": "https://github.com/Anurag-Raut/react-native-time-picker#readme",
+  "homepage": "https://anurag-raut.github.io/react-native-time-picker",
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
   },
